@@ -6,6 +6,7 @@ import tech.ignission.GoogleAppsScript.forms.{Form, FormResponse}
 import tech.ignission.GoogleAppsScript.spreadsheet.Spreadsheet
 import tech.ignission.GoogleAppsScript.document
 import tech.ignission.GoogleAppsScript.script.AuthMode
+import tech.ignission.GoogleAppsScript.slides.Presentation
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
