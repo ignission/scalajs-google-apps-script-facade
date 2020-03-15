@@ -46,10 +46,14 @@ lazy val publishPackages = Seq(
   )
 )
 
-
 lazy val root = project.in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(commonSettings)
-  .settings(
-    publishPackages
-  )
+  .settings(publishPackages)
+
+lazy val example = project.in(file("example"))
+  .enablePlugins(ScalaJSPlugin)
+  .settings(commonSettings)
+  .settings(noPublishSettings)
+  .dependsOn(root)
+
