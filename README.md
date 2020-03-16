@@ -13,4 +13,4 @@ Add the following to your sbt build definition:
      sbt example/fastOptJS 
      
 
-Thanks for awesome project [scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer)
+Thanks for awesome project [sjrd/scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer) and [exoego/scala-js-ts-importer](https://github.com/exoego/scala-js-ts-importer)
