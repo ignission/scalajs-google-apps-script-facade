@@ -15,7 +15,7 @@ object Main {
   def doGet(): HtmlOutput = {
     val response = try {
       GoogleAppsScript.UrlFetchApp.fetch(
-        url = "https://typetalk.com/api/v1/topics/19880416",
+        url = "https://typetalk.com/api/v1/topics/123456789",
         params = Dynamic.literal(
           headers = new js.Object {
             val `X-TYPETALK-TOKEN` = "xxxxxxxxxxx"

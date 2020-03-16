@@ -6,6 +6,11 @@ This uses [@types/google-apps-script@1.0.10](https://www.npmjs.com/package/@type
 ## Usage
 Add the following to your sbt build definition:
 
-    libraryDependencies += "tech.ignission" %%% "scalajs-google-apps-script" % "0.1.0"
+    libraryDependencies += "tech.ignission" %%% "scalajs-google-apps-script" % "0.2.0"
+
+## Example
+
+     sbt example/fastOptJS 
+     
 
 Thanks for awesome project [scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer)

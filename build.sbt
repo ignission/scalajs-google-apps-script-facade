@@ -2,7 +2,7 @@
 name := "Scala.js Google Apps Script"
 
 lazy val commonSettings = Seq(
-  version := "0.1.0",
+  version := "0.2.0",
   scalaVersion := "2.13.1",
   organization := "tech.ignission"
 )
