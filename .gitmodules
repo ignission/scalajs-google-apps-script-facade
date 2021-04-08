@@ -1,3 +1,6 @@
 [submodule "DefinitelyTyped"]
 	path = DefinitelyTyped
 	url = https://github.com/DefinitelyTyped/DefinitelyTyped.git
+[submodule "scala-js-ts-importer"]
+	path = scala-js-ts-importer
+	url = https://github.com/sjrd/scala-js-ts-importer.git
