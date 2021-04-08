@@ -14,14 +14,8 @@ lazy val commonSettings = Seq(
     "-unchecked",
     "-Yrangepos",
     "-Ymacro-annotations",
-    "-Ywarn-unused",
-    "-Xlint",
-    "-Xfatal-warnings"
-  ),
-  // scalafix
-  addCompilerPlugin(scalafixSemanticdb),
-  semanticdbEnabled := true,
-  semanticdbVersion := scalafixSemanticdb.revision
+    "-Xlint"
+  )
 )
 
 lazy val noPublishSettings = Seq(
@@ -72,6 +66,23 @@ lazy val example = project
   .enablePlugins(ScalaJSPlugin)
   .settings(commonSettings)
   .settings(noPublishSettings)
+  .settings(
+    scalacOptions ++= List(
+      "-deprecation",
+      "-feature",
+      "-unchecked",
+      "-Yrangepos",
+      "-Ymacro-annotations",
+      "-Ywarn-unused",
+      "-Xlint",
+      "-Xfatal-warnings"
+    )
+  )
+  .settings(
+    addCompilerPlugin(scalafixSemanticdb),
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision
+  )
   .dependsOn(root)
 
 addCommandAlias("fix", "all compile:scalafix; test:scalafix")
