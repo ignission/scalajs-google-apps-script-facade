@@ -1,12 +1,28 @@
 name := "google-apps-script-scalajs-facade"
 
+normalizedName := "google-apps-script-scalajs-facade"
+
+ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.5.0"
+
 lazy val commonSettings = Seq(
   version := "0.4.0-SNAPSHOT",
   scalaVersion := "2.13.5",
-  organization := "tech.ignission"
+  organization := "tech.ignission",
+  scalacOptions ++= List(
+    "-deprecation",
+    "-feature",
+    "-unchecked",
+    "-Yrangepos",
+    "-Ymacro-annotations",
+    "-Ywarn-unused",
+    "-Xlint",
+    "-Xfatal-warnings"
+  ),
+  // scalafix
+  addCompilerPlugin(scalafixSemanticdb),
+  semanticdbEnabled := true,
+  semanticdbVersion := scalafixSemanticdb.revision
 )
-
-normalizedName := "google-apps-script-scalajs-facade"
 
 lazy val noPublishSettings = Seq(
   publish := {},
@@ -37,22 +53,30 @@ lazy val publishPackages = Seq(
   ),
   developers := List(
     Developer(
-      id    = "shoma416",
-      name  = "Shoma Nishitateno",
+      id = "shoma416",
+      name = "Shoma Nishitateno",
       email = "shoma416@gmail.com",
-      url   = url("https://github.com/shomatan")
+      url = url("https://github.com/shomatan")
     )
   )
 )
 
-lazy val root = project.in(file("."))
+lazy val root = project
+  .in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(commonSettings)
   .settings(publishPackages)
 
-lazy val example = project.in(file("example"))
+lazy val example = project
+  .in(file("example"))
   .enablePlugins(ScalaJSPlugin)
   .settings(commonSettings)
   .settings(noPublishSettings)
   .dependsOn(root)
 
+addCommandAlias("fix", "all compile:scalafix; test:scalafix")
+addCommandAlias("fixCheck", "; compile:scalafix --check; test:scalafix --check")
+addCommandAlias("format", "; scalafmt; test:scalafmt; scalafmtSbt")
+addCommandAlias("formatCheck", "; scalafmtCheck; test:scalafmtCheck; scalafmtSbtCheck")
+addCommandAlias("fixAll", "fix; format")
+addCommandAlias("checkAll", "fixCheck; formatCheck")
