@@ -2,7 +2,7 @@
 
 A Scala.js facade for the Google Apps Script
 
-This facade is converted from [@types/google-apps-script@1.0.10](https://www.npmjs.com/package/@types/google-apps-script/v/1.0.10)
+This facade is converted from [@types/google-apps-script@1.0.31](https://www.npmjs.com/package/@types/google-apps-script/v/1.0.31)
 
 ## Usage
 
@@ -15,8 +15,6 @@ Add the following to your sbt build definition:
 If you want to upload a generated js via command line, may install [clasp](https://github.com/google/clasp/) as following:
 
     npm install -g @google/clasp
-
-
 
     sbt example/fastOptJS
 
