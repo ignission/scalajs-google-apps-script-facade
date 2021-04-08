@@ -1,6 +1,11 @@
-*.class
-*.log
-
+## Intellij
 .idea
 
+## metals
+.bsp
+.bloop
+.metals
+metals.sbt
+
+## Scala
 target
