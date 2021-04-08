@@ -1,7 +1,7 @@
 name := "google-apps-script-scalajs-facade"
 
 lazy val commonSettings = Seq(
-  version := "0.3.0",
+  version := "0.4.0-SNAPSHOT",
   scalaVersion := "2.13.5",
   organization := "tech.ignission"
 )
