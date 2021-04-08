@@ -1,17 +1,12 @@
-
-name := "Scala.js Google Apps Script"
+name := "google-apps-script-scalajs-facade"
 
 lazy val commonSettings = Seq(
-  version := "0.2.0",
-  scalaVersion := "2.13.1",
+  version := "0.3.0",
+  scalaVersion := "2.13.5",
   organization := "tech.ignission"
 )
 
-sonatypeProfileName := "tech.ignission"
-
-normalizedName := "scalajs-google-apps-script"
-
-isSnapshot := version.value endsWith "SNAPSHOT"
+normalizedName := "google-apps-script-scalajs-facade"
 
 lazy val noPublishSettings = Seq(
   publish := {},
@@ -21,24 +16,28 @@ lazy val noPublishSettings = Seq(
 )
 
 lazy val publishPackages = Seq(
+  isSnapshot := version.value endsWith "SNAPSHOT",
+  publishTo in ThisBuild := sonatypePublishToBundle.value,
   publishMavenStyle := true,
   publishArtifact in Test := false,
-  publishTo := {
-    val realm = "Sonatype Nexus Repository Manager"
-    val staging = "https://oss.sonatype.org/content/repositories/snapshots"
-    val release = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-    if (isSnapshot.value)
-      Some(realm at staging)
-    else
-      Some(realm at release)
-  },
-  credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
+  publishArtifact in (Compile, packageDoc) := true,
+  publishArtifact in (Compile, packageSrc) := true,
+  pomIncludeRepository := { _ => false },
+  sonatypeTimeoutMillis := 3 * 60 * 60 * 1000,
+  publishConfiguration := publishConfiguration.value.withOverwrite(true),
+  publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
   homepage := Some(url("https://github.com/ignission")),
+  sources in (Compile, doc) := Seq.empty,
   licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT")),
-  scmInfo := Some(ScmInfo(url("https://github.com/ignission/scalajs-google-apps-script"), "scm:git:git@github.com/ignission/scalajs-google-apps-script.git")),
+  scmInfo := Some(
+    ScmInfo(
+      url("https://github.com/ignission/scalajs-google-apps-script-facade"),
+      "scm:git:git@github.com/ignission/scalajs-google-apps-script-facade.git"
+    )
+  ),
   developers := List(
     Developer(
-      id    = "shomatan",
+      id    = "shoma416",
       name  = "Shoma Nishitateno",
       email = "shoma416@gmail.com",
       url   = url("https://github.com/shomatan")
