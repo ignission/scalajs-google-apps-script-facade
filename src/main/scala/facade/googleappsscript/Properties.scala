@@ -1,13 +1,7 @@
+package facade.googleappsscript.properties
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Properties {
+import scala.scalajs.js.|
 
 @js.native
 trait Properties extends js.Object {
@@ -50,18 +44,4 @@ trait UserProperties extends js.Object {
   def setProperties(properties: js.Dictionary[String]): UserProperties = js.native
   def setProperties(properties: js.Dictionary[String], deleteAllOthers: Boolean): UserProperties = js.native
   def setProperty(key: String, value: String): UserProperties = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var PropertiesService: GoogleAppsScript.Properties.PropertiesService = js.native
-  var ScriptProperties: GoogleAppsScript.Properties.ScriptProperties = js.native
-  var UserProperties: GoogleAppsScript.Properties.UserProperties = js.native
-}
-
 }

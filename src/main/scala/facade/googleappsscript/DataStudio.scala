@@ -1,13 +1,16 @@
+package facade.googleappsscript.data_studio
+
+import facade.googleappsscript.data_studio.Data_Studio.{NumericOperator, RegexpOperator}
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
-package facade {
 
-package GoogleAppsScript {
-
-package Data_Studio {
+@js.native
+@JSGlobalScope
+object Facade extends js.Object {
+}
 
 @js.native
 sealed trait AggregationType extends js.Object {
@@ -81,10 +84,10 @@ trait Checkbox extends js.Object {
 
 @js.native
 trait CommunityConnector extends js.Object {
-  var AggregationType: AggregationType.type = js.native
-  var AuthType: AuthType.type = js.native
-  var BigQueryParameterType: BigQueryParameterType.type = js.native
-  var FieldType: FieldType.type = js.native
+  var AggregationType: AggregationType = js.native
+  var AuthType: AuthType = js.native
+  var BigQueryParameterType: BigQueryParameterType = js.native
+  var FieldType: FieldType = js.native
   def getConfig(): Config = js.native
   def getFields(): Fields = js.native
   def newAuthTypeResponse(): GetAuthTypeResponse = js.native
@@ -398,16 +401,4 @@ trait DimensionsFilters extends js.Object {
 object Data_Studio extends js.Object {
   type RegexpOperator = String
   type NumericOperator = String
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var DataStudioApp: GoogleAppsScript.Data_Studio.DataStudioApp = js.native
-}
-
 }

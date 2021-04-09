@@ -1,13 +1,15 @@
+package facade.googleappsscript.groups
+
+import facade.googleappsscript.base.User
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
 
-package GoogleAppsScript {
-
-package Groups {
+@js.native
+@JSGlobalScope
+object Facade extends js.Object {
+}
 
 @js.native
 trait Group extends js.Object {
@@ -25,7 +27,7 @@ trait Group extends js.Object {
 
 @js.native
 trait GroupsApp extends js.Object {
-  var Role: Role.type = js.native
+  var Role: Role = js.native
   def getGroupByEmail(email: String): Group = js.native
   def getGroups(): js.Array[Group] = js.native
 }
@@ -44,16 +46,4 @@ object Role extends js.Object {
   var PENDING: Role = js.native
   @JSBracketAccess
   def apply(value: Role): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var GroupsApp: GoogleAppsScript.Groups.GroupsApp = js.native
-}
-
 }

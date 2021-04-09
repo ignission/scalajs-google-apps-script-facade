@@ -1,13 +1,10 @@
+package facade.googleappsscript.drive
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Drive {
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 @js.native
 sealed trait Access extends js.Object {
@@ -27,8 +24,8 @@ object Access extends js.Object {
 
 @js.native
 trait DriveApp extends js.Object {
-  var Access: Access.type = js.native
-  var Permission: Permission.type = js.native
+  var Access: Access = js.native
+  var Permission: Permission = js.native
   def addFile(child: File): Folder = js.native
   def addFolder(child: Folder): Folder = js.native
   def continueFileIterator(continuationToken: String): FileIterator = js.native
@@ -59,16 +56,16 @@ trait DriveApp extends js.Object {
 @js.native
 trait File extends js.Object {
   def addCommenter(emailAddress: String): File = js.native
-  def addCommenter(user: _root_.User): File = js.native
+  def addCommenter(user: User): File = js.native
   def addCommenters(emailAddresses: js.Array[String]): File = js.native
   def addEditor(emailAddress: String): File = js.native
-  def addEditor(user: _root_.User): File = js.native
+  def addEditor(user: User): File = js.native
   def addEditors(emailAddresses: js.Array[String]): File = js.native
   def addViewer(emailAddress: String): File = js.native
-  def addViewer(user: _root_.User): File = js.native
+  def addViewer(user: User): File = js.native
   def addViewers(emailAddresses: js.Array[String]): File = js.native
   def getAccess(email: String): Permission = js.native
-  def getAccess(user: _root_.User): Permission = js.native
+  def getAccess(user: User): Permission = js.native
   def getAs(contentType: String): Blob = js.native
   def getBlob(): Blob = js.native
   def getDateCreated(): Date = js.native
@@ -97,18 +94,18 @@ trait File extends js.Object {
   def makeCopy(name: String, destination: Folder): File = js.native
   def moveTo(destination: Folder): File = js.native
   def removeCommenter(emailAddress: String): File = js.native
-  def removeCommenter(user: _root_.User): File = js.native
+  def removeCommenter(user: User): File = js.native
   def removeEditor(emailAddress: String): File = js.native
-  def removeEditor(user: _root_.User): File = js.native
+  def removeEditor(user: User): File = js.native
   def removeViewer(emailAddress: String): File = js.native
-  def removeViewer(user: _root_.User): File = js.native
+  def removeViewer(user: User): File = js.native
   def revokePermissions(user: String): File = js.native
-  def revokePermissions(user: _root_.User): File = js.native
+  def revokePermissions(user: User): File = js.native
   def setContent(content: String): File = js.native
   def setDescription(description: String): File = js.native
   def setName(name: String): File = js.native
   def setOwner(emailAddress: String): File = js.native
-  def setOwner(user: _root_.User): File = js.native
+  def setOwner(user: User): File = js.native
   def setShareableByEditors(shareable: Boolean): File = js.native
   def setSharing(accessType: Access, permissionType: Permission): File = js.native
   def setStarred(starred: Boolean): File = js.native
@@ -125,19 +122,19 @@ trait FileIterator extends js.Object {
 @js.native
 trait Folder extends js.Object {
   def addEditor(emailAddress: String): Folder = js.native
-  def addEditor(user: _root_.User): Folder = js.native
+  def addEditor(user: User): Folder = js.native
   def addEditors(emailAddresses: js.Array[String]): Folder = js.native
   def addFile(child: File): Folder = js.native
   def addFolder(child: Folder): Folder = js.native
   def addViewer(emailAddress: String): Folder = js.native
-  def addViewer(user: _root_.User): Folder = js.native
+  def addViewer(user: User): Folder = js.native
   def addViewers(emailAddresses: js.Array[String]): Folder = js.native
   def createFile(blob: BlobSource): File = js.native
   def createFile(name: String, content: String): File = js.native
   def createFile(name: String, content: String, mimeType: String): File = js.native
   def createFolder(name: String): Folder = js.native
   def getAccess(email: String): Permission = js.native
-  def getAccess(user: _root_.User): Permission = js.native
+  def getAccess(user: User): Permission = js.native
   def getDateCreated(): Date = js.native
   def getDescription(): String | Null = js.native
   def getEditors(): js.Array[User] = js.native
@@ -161,19 +158,19 @@ trait Folder extends js.Object {
   def isTrashed(): Boolean = js.native
   def moveTo(destination: Folder): Folder = js.native
   def removeEditor(emailAddress: String): Folder = js.native
-  def removeEditor(user: _root_.User): Folder = js.native
+  def removeEditor(user: User): Folder = js.native
   def removeFile(child: File): Folder = js.native
   def removeFolder(child: Folder): Folder = js.native
   def removeViewer(emailAddress: String): Folder = js.native
-  def removeViewer(user: _root_.User): Folder = js.native
+  def removeViewer(user: User): Folder = js.native
   def revokePermissions(user: String): Folder = js.native
-  def revokePermissions(user: _root_.User): Folder = js.native
+  def revokePermissions(user: User): Folder = js.native
   def searchFiles(params: String): FileIterator = js.native
   def searchFolders(params: String): FolderIterator = js.native
   def setDescription(description: String): Folder = js.native
   def setName(name: String): Folder = js.native
   def setOwner(emailAddress: String): Folder = js.native
-  def setOwner(user: _root_.User): Folder = js.native
+  def setOwner(user: User): Folder = js.native
   def setShareableByEditors(shareable: Boolean): Folder = js.native
   def setSharing(accessType: Access, permissionType: Permission): Folder = js.native
   def setStarred(starred: Boolean): Folder = js.native
@@ -211,16 +208,4 @@ trait User extends js.Object {
   def getName(): String = js.native
   def getPhotoUrl(): String = js.native
   def getUserLoginId(): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var DriveApp: GoogleAppsScript.Drive.DriveApp = js.native
-}
-
 }

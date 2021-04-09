@@ -1,13 +1,12 @@
+package facade.googleappsscript.slides
+
+import facade.googleappsscript.base._
+import facade.googleappsscript.spreadsheet.EmbeddedChart
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
 
-package GoogleAppsScript {
-
-package Slides {
 
 @js.native
 trait AffineTransform extends js.Object {
@@ -327,11 +326,11 @@ trait Layout extends js.Object {
   def insertShape(shape: Shape): Shape = js.native
   def insertShape(shapeType: ShapeType): Shape = js.native
   def insertShape(shapeType: ShapeType, left: Double, top: Double, width: Double, height: Double): Shape = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart): SheetsChart = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart): Image = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(numRows: Integer, numColumns: Integer, left: Double, top: Double, width: Double, height: Double): Table = js.native
   def insertTable(table: Table): Table = js.native
@@ -583,11 +582,11 @@ trait Master extends js.Object {
   def insertShape(shape: Shape): Shape = js.native
   def insertShape(shapeType: ShapeType): Shape = js.native
   def insertShape(shapeType: ShapeType, left: Double, top: Double, width: Double, height: Double): Shape = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart): SheetsChart = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart): Image = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(numRows: Integer, numColumns: Integer, left: Double, top: Double, width: Double, height: Double): Table = js.native
   def insertTable(table: Table): Table = js.native
@@ -678,11 +677,11 @@ trait Page extends js.Object {
   def insertShape(shape: Shape): Shape = js.native
   def insertShape(shapeType: ShapeType): Shape = js.native
   def insertShape(shapeType: ShapeType, left: Double, top: Double, width: Double, height: Double): Shape = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart): SheetsChart = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart): Image = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(numRows: Integer, numColumns: Integer, left: Double, top: Double, width: Double, height: Double): Table = js.native
   def insertTable(table: Table): Table = js.native
@@ -1043,8 +1042,8 @@ trait Shape extends js.Object {
   def replaceWithImage(blobSource: BlobSource, crop: Boolean): Image = js.native
   def replaceWithImage(imageUrl: String): Image = js.native
   def replaceWithImage(imageUrl: String, crop: Boolean): Image = js.native
-  def replaceWithSheetsChart(sourceChart: Spreadsheet.EmbeddedChart): SheetsChart = js.native
-  def replaceWithSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart): Image = js.native
+  def replaceWithSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
+  def replaceWithSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
   def scaleHeight(ratio: Double): Shape = js.native
   def scaleWidth(ratio: Double): Shape = js.native
   def select(): Unit = js.native
@@ -1322,11 +1321,11 @@ trait Slide extends js.Object {
   def insertShape(shape: Shape): Shape = js.native
   def insertShape(shapeType: ShapeType): Shape = js.native
   def insertShape(shapeType: ShapeType, left: Double, top: Double, width: Double, height: Double): Shape = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart): SheetsChart = js.native
-  def insertSheetsChart(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
+  def insertSheetsChart(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart): Image = js.native
-  def insertSheetsChartAsImage(sourceChart: Spreadsheet.EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
+  def insertSheetsChartAsImage(sourceChart: EmbeddedChart, left: Double, top: Double, width: Double, height: Double): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(numRows: Integer, numColumns: Integer, left: Double, top: Double, width: Double, height: Double): Table = js.native
   def insertTable(table: Table): Table = js.native
@@ -1376,35 +1375,35 @@ object SlidePosition extends js.Object {
 
 @js.native
 trait SlidesApp extends js.Object {
-  var AlignmentPosition: AlignmentPosition.type = js.native
-  var ArrowStyle: ArrowStyle.type = js.native
-  var AutoTextType: AutoTextType.type = js.native
-  var CellMergeState: CellMergeState.type = js.native
-  var ColorType: ColorType.type = js.native
-  var ContentAlignment: ContentAlignment.type = js.native
-  var DashStyle: DashStyle.type = js.native
-  var FillType: FillType.type = js.native
-  var LineCategory: LineCategory.type = js.native
-  var LineFillType: LineFillType.type = js.native
-  var LineType: LineType.type = js.native
-  var LinkType: LinkType.type = js.native
-  var ListPreset: ListPreset.type = js.native
-  var PageBackgroundType: PageBackgroundType.type = js.native
-  var PageElementType: PageElementType.type = js.native
-  var PageType: PageType.type = js.native
-  var ParagraphAlignment: ParagraphAlignment.type = js.native
-  var PlaceholderType: PlaceholderType.type = js.native
-  var PredefinedLayout: PredefinedLayout.type = js.native
-  var SelectionType: SelectionType.type = js.native
-  var ShapeType: ShapeType.type = js.native
-  var SheetsChartEmbedType: SheetsChartEmbedType.type = js.native
-  var SlideLinkingMode: SlideLinkingMode.type = js.native
-  var SlidePosition: SlidePosition.type = js.native
-  var SpacingMode: SpacingMode.type = js.native
-  var TextBaselineOffset: TextBaselineOffset.type = js.native
-  var TextDirection: TextDirection.type = js.native
-  var ThemeColorType: ThemeColorType.type = js.native
-  var VideoSourceType: VideoSourceType.type = js.native
+  var AlignmentPosition: AlignmentPosition = js.native
+  var ArrowStyle: ArrowStyle = js.native
+  var AutoTextType: AutoTextType = js.native
+  var CellMergeState: CellMergeState = js.native
+  var ColorType: ColorType = js.native
+  var ContentAlignment: ContentAlignment = js.native
+  var DashStyle: DashStyle = js.native
+  var FillType: FillType = js.native
+  var LineCategory: LineCategory = js.native
+  var LineFillType: LineFillType = js.native
+  var LineType: LineType = js.native
+  var LinkType: LinkType = js.native
+  var ListPreset: ListPreset = js.native
+  var PageBackgroundType: PageBackgroundType = js.native
+  var PageElementType: PageElementType = js.native
+  var PageType: PageType = js.native
+  var ParagraphAlignment: ParagraphAlignment = js.native
+  var PlaceholderType: PlaceholderType = js.native
+  var PredefinedLayout: PredefinedLayout = js.native
+  var SelectionType: SelectionType = js.native
+  var ShapeType: ShapeType = js.native
+  var SheetsChartEmbedType: SheetsChartEmbedType = js.native
+  var SlideLinkingMode: SlideLinkingMode = js.native
+  var SlidePosition: SlidePosition = js.native
+  var SpacingMode: SpacingMode = js.native
+  var TextBaselineOffset: TextBaselineOffset = js.native
+  var TextDirection: TextDirection = js.native
+  var ThemeColorType: ThemeColorType = js.native
+  var VideoSourceType: VideoSourceType = js.native
   def create(name: String): Presentation = js.native
   def getActivePresentation(): Presentation = js.native
   def getUi(): Ui = js.native
@@ -1759,16 +1758,4 @@ trait WordArt extends js.Object {
   def setTop(top: Double): WordArt = js.native
   def setTransform(transform: AffineTransform): WordArt = js.native
   def setWidth(width: Double): WordArt = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var SlidesApp: GoogleAppsScript.Slides.SlidesApp = js.native
-}
-
 }

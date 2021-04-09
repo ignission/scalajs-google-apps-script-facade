@@ -1,13 +1,9 @@
+package facade.googleappsscript.mail
+
+import facade.googleappsscript.base.BlobSource
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Mail {
+import scala.scalajs.js.annotation._
 
 @js.native
 trait MailAdvancedParameters extends js.Object {
@@ -42,16 +38,4 @@ trait MailApp extends js.Object {
   def sendEmail(recipient: String, subject: String, body: String): Unit = js.native
   def sendEmail(recipient: String, subject: String, body: String, options: MailAdvancedParameters): Unit = js.native
   def sendEmail(to: String, replyTo: String, subject: String, body: String): Unit = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var MailApp: GoogleAppsScript.Mail.MailApp = js.native
-}
-
 }

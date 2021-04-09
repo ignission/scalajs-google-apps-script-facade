@@ -1,13 +1,10 @@
+package facade.googleappsscript.sites
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
-
-package GoogleAppsScript {
-
-package Sites {
 
 @js.native
 trait Attachment extends js.Object {
@@ -224,8 +221,8 @@ trait Site extends js.Object {
 
 @js.native
 trait SitesApp extends js.Object {
-  var AttachmentType: AttachmentType.type = js.native
-  var PageType: PageType.type = js.native
+  var AttachmentType: AttachmentType = js.native
+  var PageType: PageType = js.native
   def copySite(domain: String, name: String, title: String, summary: String, site: Site): Site = js.native
   def createSite(domain: String, name: String, title: String, summary: String): Site = js.native
   def getActivePage(): Page = js.native
@@ -240,16 +237,4 @@ trait SitesApp extends js.Object {
   def getSites(start: Integer, max: Integer): js.Array[Site] = js.native
   def getSites(domain: String): js.Array[Site] = js.native
   def getSites(domain: String, start: Integer, max: Integer): js.Array[Site] = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var SitesApp: GoogleAppsScript.Sites.SitesApp = js.native
-}
-
 }

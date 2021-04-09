@@ -1,13 +1,14 @@
+package facade.googleappsscript.script
+
+import facade.googleappsscript.base._
+import facade.googleappsscript.document.Document
+import facade.googleappsscript.forms.Form
+import facade.googleappsscript.spreadsheet.Spreadsheet
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
 
-package GoogleAppsScript {
-
-package Script {
 
 @js.native
 sealed trait AuthMode extends js.Object {
@@ -112,12 +113,12 @@ object InstallationSource extends js.Object {
 
 @js.native
 trait ScriptApp extends js.Object {
-  var AuthMode: AuthMode.type = js.native
-  var AuthorizationStatus: AuthorizationStatus.type = js.native
-  var EventType: EventType.type = js.native
-  var InstallationSource: InstallationSource.type = js.native
-  var TriggerSource: TriggerSource.type = js.native
-  var WeekDay: Weekday.type = js.native
+  var AuthMode: AuthMode = js.native
+  var AuthorizationStatus: AuthorizationStatus = js.native
+  var EventType: EventType = js.native
+  var InstallationSource: InstallationSource = js.native
+  var TriggerSource: TriggerSource = js.native
+  var WeekDay: Weekday = js.native
   def deleteTrigger(trigger: Trigger): Unit = js.native
   def getAuthorizationInfo(authMode: AuthMode): AuthorizationInfo = js.native
   def getIdentityToken(): String = js.native
@@ -126,9 +127,9 @@ trait ScriptApp extends js.Object {
   def getProjectTriggers(): js.Array[Trigger] = js.native
   def getScriptId(): String = js.native
   def getService(): Service = js.native
-  def getUserTriggers(document: Document.Document): js.Array[Trigger] = js.native
-  def getUserTriggers(form: Forms.Form): js.Array[Trigger] = js.native
-  def getUserTriggers(spreadsheet: Spreadsheet.Spreadsheet): js.Array[Trigger] = js.native
+  def getUserTriggers(document: Document): js.Array[Trigger] = js.native
+  def getUserTriggers(form: Form): js.Array[Trigger] = js.native
+  def getUserTriggers(spreadsheet: Spreadsheet): js.Array[Trigger] = js.native
   def invalidateAuth(): Unit = js.native
   def newStateToken(): StateTokenBuilder = js.native
   def newTrigger(functionName: String): TriggerBuilder = js.native
@@ -171,11 +172,11 @@ trait Trigger extends js.Object {
 
 @js.native
 trait TriggerBuilder extends js.Object {
-  def forDocument(document: Document.Document): DocumentTriggerBuilder = js.native
+  def forDocument(document: Document): DocumentTriggerBuilder = js.native
   def forDocument(key: String): DocumentTriggerBuilder = js.native
-  def forForm(form: Forms.Form): FormTriggerBuilder = js.native
+  def forForm(form: Form): FormTriggerBuilder = js.native
   def forForm(key: String): FormTriggerBuilder = js.native
-  def forSpreadsheet(sheet: Spreadsheet.Spreadsheet): SpreadsheetTriggerBuilder = js.native
+  def forSpreadsheet(sheet: Spreadsheet): SpreadsheetTriggerBuilder = js.native
   def forSpreadsheet(key: String): SpreadsheetTriggerBuilder = js.native
   def forUserCalendar(emailId: String): CalendarTriggerBuilder = js.native
   def timeBased(): ClockTriggerBuilder = js.native
@@ -195,16 +196,4 @@ object TriggerSource extends js.Object {
   var CALENDAR: TriggerSource = js.native
   @JSBracketAccess
   def apply(value: TriggerSource): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var ScriptApp: GoogleAppsScript.Script.ScriptApp = js.native
-}
-
 }

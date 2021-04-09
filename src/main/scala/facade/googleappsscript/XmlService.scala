@@ -1,13 +1,9 @@
+package facade.googleappsscript.xml_service
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
 
-package GoogleAppsScript {
-
-package XML_Service {
 
 @js.native
 trait Attribute extends js.Object {
@@ -22,19 +18,19 @@ trait Attribute extends js.Object {
 @js.native
 trait Cdata extends Content {
   def append(text: String): Text = js.native
-  def detach(): Content = js.native
-  def getParentElement(): Element = js.native
+  override def detach(): Content = js.native
+  override def getParentElement(): Element = js.native
   def getText(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
   def setText(text: String): Text = js.native
 }
 
 @js.native
 trait Comment extends Content {
-  def detach(): Content = js.native
-  def getParentElement(): Element = js.native
+  override def detach(): Content = js.native
+  override def getParentElement(): Element = js.native
   def getText(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
   def setText(text: String): Comment = js.native
 }
 
@@ -73,13 +69,13 @@ object ContentType extends js.Object {
 
 @js.native
 trait DocType extends Content {
-  def detach(): Content = js.native
+  override def detach(): Content = js.native
   def getElementName(): String = js.native
   def getInternalSubset(): String = js.native
-  def getParentElement(): Element = js.native
+  override def getParentElement(): Element = js.native
   def getPublicId(): String = js.native
   def getSystemId(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
   def setElementName(name: String): DocType = js.native
   def setInternalSubset(data: String): DocType = js.native
   def setPublicId(id: String): DocType = js.native
@@ -111,7 +107,7 @@ trait Element extends Content {
   def addContent(content: Content): Element = js.native
   def addContent(index: Integer, content: Content): Element = js.native
   def cloneContent(): js.Array[Content] = js.native
-  def detach(): Content = js.native
+  override def detach(): Content = js.native
   def getAllContent(): js.Array[Content] = js.native
   def getAttribute(name: String): Attribute = js.native
   def getAttribute(name: String, namespace: Namespace): Attribute = js.native
@@ -130,10 +126,10 @@ trait Element extends Content {
   def getName(): String = js.native
   def getNamespace(): Namespace = js.native
   def getNamespace(prefix: String): Namespace = js.native
-  def getParentElement(): Element = js.native
+  override def getParentElement(): Element = js.native
   def getQualifiedName(): String = js.native
   def getText(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
   def isAncestorOf(other: Element): Boolean = js.native
   def isRootElement(): Boolean = js.native
   def removeAttribute(attribute: Attribute): Boolean = js.native
@@ -152,12 +148,12 @@ trait Element extends Content {
 
 @js.native
 trait EntityRef extends Content {
-  def detach(): Content = js.native
+  override def detach(): Content = js.native
   def getName(): String = js.native
-  def getParentElement(): Element = js.native
+  override def getParentElement(): Element = js.native
   def getPublicId(): String = js.native
   def getSystemId(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
   def setName(name: String): EntityRef = js.native
   def setPublicId(id: String): EntityRef = js.native
   def setSystemId(id: String): EntityRef = js.native
@@ -182,20 +178,20 @@ trait Namespace extends js.Object {
 
 @js.native
 trait ProcessingInstruction extends Content {
-  def detach(): Content = js.native
+  override def detach(): Content = js.native
   def getData(): String = js.native
-  def getParentElement(): Element = js.native
+  override def getParentElement(): Element = js.native
   def getTarget(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
 }
 
 @js.native
 trait Text extends Content {
   def append(text: String): Text = js.native
-  def detach(): Content = js.native
-  def getParentElement(): Element = js.native
+  override def detach(): Content = js.native
+  override def getParentElement(): Element = js.native
   def getText(): String = js.native
-  def getValue(): String = js.native
+  override def getValue(): String = js.native
   def setText(text: String): Text = js.native
 }
 
@@ -220,16 +216,4 @@ trait XmlService extends js.Object {
   def getRawFormat(): Format = js.native
   def getXmlNamespace(): Namespace = js.native
   def parse(xml: String): Document = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var XmlService: GoogleAppsScript.XML_Service.XmlService = js.native
-}
-
 }

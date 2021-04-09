@@ -1,13 +1,11 @@
+package facade.googleappsscript.calendar
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
 import js.annotation._
 import js.|
 
-package facade {
-
-package GoogleAppsScript {
-
-package Calendar {
 
 @js.native
 trait Calendar extends js.Object {
@@ -49,12 +47,12 @@ trait Calendar extends js.Object {
 
 @js.native
 trait CalendarApp extends js.Object {
-  var Color: Color.type = js.native
-  var EventColor: EventColor.type = js.native
-  var GuestStatus: GuestStatus.type = js.native
-  var Month: Month.type = js.native
-  var Visibility: Visibility.type = js.native
-  var Weekday: Weekday.type = js.native
+  var Color: Color = js.native
+  var EventColor: EventColor = js.native
+  var GuestStatus: GuestStatus = js.native
+  var Month: Month = js.native
+  var Visibility: Visibility = js.native
+  var Weekday: Weekday = js.native
   def createAllDayEvent(title: String, date: Date): CalendarEvent = js.native
   def createAllDayEvent(title: String, startDate: Date, endDate: Date): CalendarEvent = js.native
   def createAllDayEvent(title: String, startDate: Date, endDate: Date, options: js.Dictionary[js.Any]): CalendarEvent = js.native
@@ -345,16 +343,4 @@ object Visibility extends js.Object {
   var PUBLIC: Visibility = js.native
   @JSBracketAccess
   def apply(value: Visibility): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var CalendarApp: GoogleAppsScript.Calendar.CalendarApp = js.native
-}
-
 }

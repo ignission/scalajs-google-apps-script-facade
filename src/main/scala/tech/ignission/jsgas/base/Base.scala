@@ -46,7 +46,7 @@ trait Browser extends js.Object {
 sealed trait Button extends js.Object {}
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base.Button")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.Button")
 object Button extends js.Object {
   var CLOSE: Button  = js.native
   var OK: Button     = js.native
@@ -61,7 +61,7 @@ object Button extends js.Object {
 sealed trait ButtonSet extends js.Object {}
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base.ButtonSet")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.ButtonSet")
 object ButtonSet extends js.Object {
   var OK: ButtonSet            = js.native
   var OK_CANCEL: ButtonSet     = js.native
@@ -75,7 +75,7 @@ object ButtonSet extends js.Object {
 sealed trait ColorType extends js.Object {}
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base.ColorType")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.ColorType")
 object ColorType extends js.Object {
   var UNSUPPORTED: ColorType = js.native
   var RGB: ColorType         = js.native
@@ -104,7 +104,7 @@ trait Menu extends js.Object {
 sealed trait MimeType extends js.Object {}
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base.MimeType")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.MimeType")
 object MimeType extends js.Object {
   var GOOGLE_APPS_SCRIPT: MimeType          = js.native
   var GOOGLE_DRAWINGS: MimeType             = js.native
@@ -145,7 +145,7 @@ object MimeType extends js.Object {
 sealed trait Month extends js.Object {}
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base.Month")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.Month")
 object Month extends js.Object {
   var JANUARY: Month   = js.native
   var FEBRUARY: Month  = js.native
@@ -217,7 +217,7 @@ trait User extends js.Object {
 sealed trait Weekday extends js.Object {}
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base.Weekday")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.Weekday")
 object Weekday extends js.Object {
   var SUNDAY: Weekday    = js.native
   var MONDAY: Weekday    = js.native
@@ -295,9 +295,9 @@ trait Date extends js.Object {
 
 @js.native
 trait DateConstructor extends js.Object {
-  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(Date),List())))) */
-  /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(value),false,Some(UnionType(TypeRef(CoreType(number),List()),TypeRef(CoreType(string),List()))))),Some(TypeRef(TypeName(Date),List())))) */
-  /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(year),false,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(month),false,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(date),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(hours),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(minutes),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(seconds),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(ms),true,Some(TypeRef(CoreType(number),List())))),Some(TypeRef(TypeName(Date),List())))) */
+  /* ??? ConstructorMember(FunSignature(List(),List(),Some(TypeRef(TypeName(facade.googleappsscript.base.Date),List())))) */
+  /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(value),false,Some(UnionType(TypeRef(CoreType(number),List()),TypeRef(CoreType(string),List()))))),Some(TypeRef(TypeName(facade.googleappsscript.base.Date),List())))) */
+  /* ??? ConstructorMember(FunSignature(List(),List(FunParam(Ident(year),false,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(month),false,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(date),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(hours),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(minutes),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(seconds),true,Some(TypeRef(CoreType(number),List()))), FunParam(Ident(ms),true,Some(TypeRef(CoreType(number),List())))),Some(TypeRef(TypeName(facade.googleappsscript.base.Date),List())))) */
   def apply(): String          = js.native
   def parse(s: String): Double = js.native
   def UTC(
@@ -313,7 +313,7 @@ trait DateConstructor extends js.Object {
 }
 
 @js.native
-@JSGlobal("GoogleAppsScript.Base")
+@JSGlobal("GoogleAppsScript.facade.googleappsscript.base.Base")
 object Base extends js.Object {
   val Date: DateConstructor = js.native
 }

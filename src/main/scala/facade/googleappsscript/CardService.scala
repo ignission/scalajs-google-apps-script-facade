@@ -1,13 +1,10 @@
+package facade.googleappsscript.card_service
+
+import facade.googleappsscript.conference_data.ConferenceData
+import facade.googleappsscript.gmail.GmailDraft
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Card_Service {
+import scala.scalajs.js.annotation._
 
 @js.native
 trait Action extends js.Object {
@@ -118,17 +115,17 @@ trait CardSection extends js.Object {
 
 @js.native
 trait CardService extends js.Object {
-  var ComposedEmailType: ComposedEmailType.type = js.native
-  var ContentType: ContentType.type = js.native
-  var Icon: Icon.type = js.native
-  var ImageStyle: ImageStyle.type = js.native
-  var LoadIndicator: LoadIndicator.type = js.native
-  var OnClose: OnClose.type = js.native
-  var OpenAs: OpenAs.type = js.native
-  var SelectionInputType: SelectionInputType.type = js.native
-  var SwitchControlType: SwitchControlType.type = js.native
-  var TextButtonStyle: TextButtonStyle.type = js.native
-  var UpdateDraftBodyType: UpdateDraftBodyType.type = js.native
+  var ComposedEmailType: ComposedEmailType = js.native
+  var ContentType: ContentType = js.native
+  var Icon: Icon = js.native
+  var ImageStyle: ImageStyle = js.native
+  var LoadIndicator: LoadIndicator = js.native
+  var OnClose: OnClose = js.native
+  var OpenAs: OpenAs = js.native
+  var SelectionInputType: SelectionInputType = js.native
+  var SwitchControlType: SwitchControlType = js.native
+  var TextButtonStyle: TextButtonStyle = js.native
+  var UpdateDraftBodyType: UpdateDraftBodyType = js.native
   def newAction(): Action = js.native
   def newActionResponseBuilder(): ActionResponseBuilder = js.native
   def newAuthorizationAction(): AuthorizationAction = js.native
@@ -175,7 +172,7 @@ trait ComposeActionResponse extends js.Object {
 @js.native
 trait ComposeActionResponseBuilder extends js.Object {
   def build(): ComposeActionResponse = js.native
-  def setGmailDraft(draft: Gmail.GmailDraft): ComposeActionResponseBuilder = js.native
+  def setGmailDraft(draft: GmailDraft): ComposeActionResponseBuilder = js.native
 }
 
 @js.native
@@ -535,7 +532,7 @@ trait CalendarEventActionResponse extends js.Object {
 trait CalendarEventActionResponseBuilder extends js.Object {
   def addAttendees(emails: js.Array[String]): CalendarEventActionResponseBuilder = js.native
   def build(): CalendarEventActionResponse = js.native
-  def setConferenceData(conferenceData: Conference_Data.ConferenceData): CalendarEventActionResponseBuilder = js.native
+  def setConferenceData(conferenceData: ConferenceData): CalendarEventActionResponseBuilder = js.native
 }
 
 @js.native
@@ -600,16 +597,4 @@ object UpdateDraftBodyType extends js.Object {
 
 @js.native
 trait Widget extends js.Object {
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var CardService: GoogleAppsScript.Card_Service.CardService = js.native
-}
-
 }

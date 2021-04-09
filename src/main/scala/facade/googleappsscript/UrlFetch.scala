@@ -1,13 +1,17 @@
+package facade.googleappsscript.url_fetch
+
+import facade.googleappsscript.base.Blob
+import facade.googleappsscript.url_fetch.URL_Fetch.{HttpMethod, Payload}
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
-package facade {
 
-package GoogleAppsScript {
-
-package URL_Fetch {
+@js.native
+@JSGlobalScope
+object Facade extends js.Object {
+}
 
 @js.native
 trait HTTPResponse extends js.Object {
@@ -61,16 +65,4 @@ trait HttpHeaders extends js.Object {
 object URL_Fetch extends js.Object {
   type HttpMethod = String
   type Payload = String | js.Dictionary[js.Any] | Blob
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var UrlFetchApp: GoogleAppsScript.URL_Fetch.UrlFetchApp = js.native
-}
-
 }

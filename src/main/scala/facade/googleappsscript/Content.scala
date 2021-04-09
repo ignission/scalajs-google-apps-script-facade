@@ -1,17 +1,11 @@
+package facade.googleappsscript.content
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Content {
+import scala.scalajs.js.annotation._
 
 @js.native
 trait ContentService extends js.Object {
-  var MimeType: MimeType.type = js.native
+  var MimeType: MimeType = js.native
   def createTextOutput(): TextOutput = js.native
   def createTextOutput(content: String): TextOutput = js.native
 }
@@ -21,7 +15,7 @@ sealed trait MimeType extends js.Object {
 }
 
 @js.native
-@JSGlobal("GoogleAppsScript.Content.MimeType")
+@JSGlobal("GoogleAppsScript.Content.facade.googleappsscript.base.MimeType")
 object MimeType extends js.Object {
   var ATOM: MimeType = js.native
   var CSV: MimeType = js.native
@@ -46,16 +40,4 @@ trait TextOutput extends js.Object {
   def getMimeType(): MimeType = js.native
   def setContent(content: String): TextOutput = js.native
   def setMimeType(mimeType: MimeType): TextOutput = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var ContentService: GoogleAppsScript.Content.ContentService = js.native
-}
-
 }

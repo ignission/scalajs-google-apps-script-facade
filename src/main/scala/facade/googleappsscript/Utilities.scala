@@ -1,13 +1,11 @@
+package facade.googleappsscript.utilities
+
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
-
-package GoogleAppsScript {
-
-package Utilities {
 
 @js.native
 sealed trait Charset extends js.Object {
@@ -70,10 +68,10 @@ object RsaAlgorithm extends js.Object {
 
 @js.native
 trait Utilities extends js.Object {
-  var Charset: Charset.type = js.native
-  var DigestAlgorithm: DigestAlgorithm.type = js.native
-  var MacAlgorithm: MacAlgorithm.type = js.native
-  var RsaAlgorithm: RsaAlgorithm.type = js.native
+  var Charset: Charset = js.native
+  var DigestAlgorithm: DigestAlgorithm = js.native
+  var MacAlgorithm: MacAlgorithm = js.native
+  var RsaAlgorithm: RsaAlgorithm = js.native
   def base64Decode(encoded: String): js.Array[Byte] = js.native
   def base64Decode(encoded: String, charset: Charset): js.Array[Byte] = js.native
   def base64DecodeWebSafe(encoded: String): js.Array[Byte] = js.native
@@ -119,20 +117,4 @@ trait Utilities extends js.Object {
   def zip(blobs: js.Array[BlobSource], name: String): Blob = js.native
   def jsonParse(jsonString: String): js.Dynamic = js.native
   def jsonStringify(obj: js.Any): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var Charset: GoogleAppsScript.Utilities.Charset = js.native
-  var DigestAlgorithm: GoogleAppsScript.Utilities.DigestAlgorithm = js.native
-  var MacAlgorithm: GoogleAppsScript.Utilities.MacAlgorithm = js.native
-  var RsaAlgorithm: GoogleAppsScript.Utilities.RsaAlgorithm = js.native
-  var Utilities: GoogleAppsScript.Utilities.Utilities = js.native
-}
-
 }

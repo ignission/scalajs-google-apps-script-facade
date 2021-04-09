@@ -1,13 +1,12 @@
+package facade.googleappsscript.contacts
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
-package facade {
 
-package GoogleAppsScript {
-
-package Contacts {
 
 @js.native
 trait AddressField extends js.Object {
@@ -34,31 +33,31 @@ trait CompanyField extends js.Object {
 
 @js.native
 trait Contact extends js.Object {
-  def addAddress(label: ContactsApp.Field.type | String, address: String): AddressField = js.native
+  def addAddress(label: Field.type | String, address: String): AddressField = js.native
   def addCompany(company: String, title: String): CompanyField = js.native
-  def addCustomField(label: ContactsApp.ExtendedField.type | String, content: js.Any): CustomField = js.native
-  def addDate(label: ContactsApp.Field.type | String, month: Month, day: Integer, year: Integer): DateField = js.native
-  def addEmail(label: ContactsApp.Field.type | String, address: String): EmailField = js.native
-  def addIM(label: ContactsApp.Field.type | String, address: String): IMField = js.native
-  def addPhone(label: ContactsApp.Field.type | String, number: String): PhoneField = js.native
+  def addCustomField(label: ExtendedField.type | String, content: js.Any): CustomField = js.native
+  def addDate(label: Field.type | String, month: Month, day: Integer, year: Integer): DateField = js.native
+  def addEmail(label: Field.type | String, address: String): EmailField = js.native
+  def addIM(label: Field.type | String, address: String): IMField = js.native
+  def addPhone(label: Field.type | String, number: String): PhoneField = js.native
   def addToGroup(group: ContactGroup): Contact = js.native
-  def addUrl(label: ContactsApp.Field.type | String, url: String): UrlField = js.native
+  def addUrl(label: Field.type | String, url: String): UrlField = js.native
   def deleteContact(): Unit = js.native
   def getAddresses(): js.Array[AddressField] = js.native
-  def getAddresses(label: ContactsApp.Field.type | String): js.Array[AddressField] = js.native
+  def getAddresses(label: Field.type | String): js.Array[AddressField] = js.native
   def getCompanies(): js.Array[CompanyField] = js.native
   def getContactGroups(): js.Array[ContactGroup] = js.native
   def getCustomFields(): js.Array[CustomField] = js.native
-  def getCustomFields(label: ContactsApp.ExtendedField.type | String): js.Array[CustomField] = js.native
+  def getCustomFields(label: ExtendedField.type | String): js.Array[CustomField] = js.native
   def getDates(): js.Array[DateField] = js.native
-  def getDates(label: ContactsApp.Field.type | String): js.Array[DateField] = js.native
+  def getDates(label: Field.type | String): js.Array[DateField] = js.native
   def getEmails(): js.Array[EmailField] = js.native
-  def getEmails(label: ContactsApp.Field.type | String): js.Array[EmailField] = js.native
+  def getEmails(label: Field.type | String): js.Array[EmailField] = js.native
   def getFamilyName(): String = js.native
   def getFullName(): String = js.native
   def getGivenName(): String = js.native
   def getIMs(): js.Array[IMField] = js.native
-  def getIMs(label: ContactsApp.Field.type | String): js.Array[IMField] = js.native
+  def getIMs(label: Field.type | String): js.Array[IMField] = js.native
   def getId(): String = js.native
   def getInitials(): String = js.native
   def getLastUpdated(): Date = js.native
@@ -67,13 +66,13 @@ trait Contact extends js.Object {
   def getNickname(): String = js.native
   def getNotes(): String = js.native
   def getPhones(): js.Array[PhoneField] = js.native
-  def getPhones(label: ContactsApp.Field.type | String): js.Array[PhoneField] = js.native
+  def getPhones(label: Field.type | String): js.Array[PhoneField] = js.native
   def getPrefix(): String = js.native
   def getPrimaryEmail(): String = js.native
   def getShortName(): String = js.native
   def getSuffix(): String = js.native
   def getUrls(): js.Array[UrlField] = js.native
-  def getUrls(label: ContactsApp.Field.type | String): js.Array[UrlField] = js.native
+  def getUrls(label: Field.type | String): js.Array[UrlField] = js.native
   def removeFromGroup(group: ContactGroup): Contact = js.native
   def setFamilyName(familyName: String): Contact = js.native
   def setFullName(fullName: String): Contact = js.native
@@ -126,12 +125,12 @@ trait ContactGroup extends js.Object {
 
 @js.native
 trait ContactsApp extends js.Object {
-  var ExtendedField: ExtendedField.type = js.native
-  var Field: Field.type = js.native
-  var Gender: Gender.type = js.native
-  var Month: Month.type = js.native
-  var Priority: Priority.type = js.native
-  var Sensitivity: Sensitivity.type = js.native
+  var ExtendedField: ExtendedField = js.native
+  var Field: Field = js.native
+  var Gender: Gender = js.native
+  var Month: Month = js.native
+  var Priority: Priority = js.native
+  var Sensitivity: Sensitivity = js.native
   def createContact(givenName: String, familyName: String, email: String): Contact = js.native
   def createContactGroup(name: String): ContactGroup = js.native
   def deleteContact(contact: Contact): Unit = js.native
@@ -146,7 +145,7 @@ trait ContactsApp extends js.Object {
   def getContactsByAddress(query: String, label: Field): js.Array[Contact] = js.native
   def getContactsByAddress(query: String, label: String): js.Array[Contact] = js.native
   def getContactsByCompany(query: String): js.Array[Contact] = js.native
-  def getContactsByCustomField(query: ContactsApp.ExtendedField.type | String, label: ExtendedField): js.Array[Contact] = js.native
+  def getContactsByCustomField(query: ExtendedField | String, label: ExtendedField): js.Array[Contact] = js.native
   def getContactsByDate(month: Month, day: Integer, label: Field): js.Array[Contact] = js.native
   def getContactsByDate(month: Month, day: Integer, year: Integer, label: Field): js.Array[Contact] = js.native
   def getContactsByDate(month: Month, day: Integer, year: Integer, label: String): js.Array[Contact] = js.native
@@ -363,16 +362,4 @@ trait UrlField extends js.Object {
   def setAsPrimary(): UrlField = js.native
   def setLabel(field: Field): UrlField = js.native
   def setLabel(label: String): UrlField = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var ContactsApp: GoogleAppsScript.Contacts.ContactsApp = js.native
-}
-
 }

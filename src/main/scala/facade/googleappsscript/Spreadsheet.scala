@@ -1,13 +1,14 @@
+package facade.googleappsscript.spreadsheet
+
+import facade.googleappsscript.base._
+import facade.googleappsscript.charts._
+import facade.googleappsscript.drive.File
+import facade.googleappsscript.html.HtmlOutput
+import facade.googleappsscript.spreadsheet.Spreadsheet.{FontLine, FontStyle, FontWeight}
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Spreadsheet {
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 @js.native
 sealed trait AutoFillSeries extends js.Object {
@@ -562,33 +563,33 @@ trait EmbeddedAreaChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedAreaChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedAreaChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedAreaChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedAreaChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedAreaChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedAreaChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedAreaChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
-  def setPointStyle(style: Charts.PointStyle): EmbeddedAreaChartBuilder = js.native
+  def setPointStyle(style: PointStyle): EmbeddedAreaChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedAreaChartBuilder = js.native
   def setStacked(): EmbeddedAreaChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedAreaChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedAreaChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedAreaChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedAreaChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedAreaChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedAreaChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedAreaChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedAreaChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedAreaChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedAreaChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedAreaChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedAreaChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedAreaChartBuilder = js.native
   def useLogScale(): EmbeddedAreaChartBuilder = js.native
 }
 
@@ -606,33 +607,33 @@ trait EmbeddedBarChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedBarChartBuilder = js.native
   def reverseDirection(): EmbeddedBarChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedBarChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedBarChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedBarChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedBarChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedBarChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedBarChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedBarChartBuilder = js.native
   def setStacked(): EmbeddedBarChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedBarChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedBarChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedBarChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedBarChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedBarChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedBarChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedBarChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedBarChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedBarChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedBarChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedBarChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedBarChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedBarChartBuilder = js.native
   def useLogScale(): EmbeddedBarChartBuilder = js.native
 }
 
@@ -642,10 +643,10 @@ trait EmbeddedChart extends js.Object {
   def getBlob(): Blob = js.native
   def getChartId(): Integer | Null = js.native
   def getContainerInfo(): ContainerInfo = js.native
-  def getHiddenDimensionStrategy(): Charts.ChartHiddenDimensionStrategy = js.native
-  def getMergeStrategy(): Charts.ChartMergeStrategy = js.native
+  def getHiddenDimensionStrategy(): ChartHiddenDimensionStrategy = js.native
+  def getMergeStrategy(): ChartMergeStrategy = js.native
   def getNumHeaders(): Integer = js.native
-  def getOptions(): Charts.ChartOptions = js.native
+  def getOptions(): ChartOptions = js.native
   def getRanges(): js.Array[Range] = js.native
   def getTransposeRowsAndColumns(): Boolean = js.native
   def modify(): EmbeddedChartBuilder = js.native
@@ -665,13 +666,13 @@ trait EmbeddedChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
@@ -692,32 +693,32 @@ trait EmbeddedColumnChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedColumnChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedColumnChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedColumnChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedColumnChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedColumnChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedColumnChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedColumnChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedColumnChartBuilder = js.native
   def setStacked(): EmbeddedColumnChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedColumnChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedColumnChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedColumnChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedColumnChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedColumnChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedColumnChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedColumnChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedColumnChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedColumnChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedColumnChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedColumnChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedColumnChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedColumnChartBuilder = js.native
   def useLogScale(): EmbeddedColumnChartBuilder = js.native
 }
 
@@ -735,32 +736,32 @@ trait EmbeddedComboChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedComboChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedComboChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedComboChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedComboChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedComboChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedComboChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedComboChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedComboChartBuilder = js.native
   def setStacked(): EmbeddedComboChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedComboChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedComboChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedComboChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedComboChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedComboChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedComboChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedComboChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedComboChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedComboChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedComboChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedComboChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedComboChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedComboChartBuilder = js.native
   def useLogScale(): EmbeddedComboChartBuilder = js.native
 }
 
@@ -778,32 +779,32 @@ trait EmbeddedHistogramChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedHistogramChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedHistogramChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedHistogramChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedHistogramChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedHistogramChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedHistogramChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedHistogramChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedHistogramChartBuilder = js.native
   def setStacked(): EmbeddedHistogramChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedHistogramChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedHistogramChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedHistogramChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedHistogramChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedHistogramChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedHistogramChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedHistogramChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedHistogramChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedHistogramChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedHistogramChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedHistogramChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedHistogramChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedHistogramChartBuilder = js.native
   def useLogScale(): EmbeddedHistogramChartBuilder = js.native
 }
 
@@ -821,33 +822,33 @@ trait EmbeddedLineChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedLineChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedLineChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedLineChartBuilder = js.native
-  def setCurveStyle(style: Charts.CurveStyle): EmbeddedLineChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedLineChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedLineChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setCurveStyle(style: CurveStyle): EmbeddedLineChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedLineChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
-  def setPointStyle(style: Charts.PointStyle): EmbeddedLineChartBuilder = js.native
+  def setPointStyle(style: PointStyle): EmbeddedLineChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedLineChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedLineChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedLineChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedLineChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedLineChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedLineChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedLineChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedLineChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedLineChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder = js.native
   def useLogScale(): EmbeddedLineChartBuilder = js.native
 }
 
@@ -865,24 +866,24 @@ trait EmbeddedPieChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def reverseCategories(): EmbeddedPieChartBuilder = js.native
   def set3D(): EmbeddedPieChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedPieChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedPieChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedPieChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedPieChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedPieChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedPieChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedPieChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedPieChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedPieChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
 }
 
@@ -900,34 +901,34 @@ trait EmbeddedScatterChartBuilder extends js.Object {
   def asTableChart(): EmbeddedTableChartBuilder = js.native
   def build(): EmbeddedChart = js.native
   def clearRanges(): EmbeddedChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
   def setBackgroundColor(cssValue: String): EmbeddedScatterChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setColors(cssValues: js.Array[String]): EmbeddedScatterChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
-  def setLegendPosition(position: Charts.Position): EmbeddedScatterChartBuilder = js.native
-  def setLegendTextStyle(textStyle: Charts.TextStyle): EmbeddedScatterChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setLegendPosition(position: Position): EmbeddedScatterChartBuilder = js.native
+  def setLegendTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
-  def setPointStyle(style: Charts.PointStyle): EmbeddedScatterChartBuilder = js.native
+  def setPointStyle(style: PointStyle): EmbeddedScatterChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedScatterChartBuilder = js.native
-  def setTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedScatterChartBuilder = js.native
+  def setTitleTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
   def setXAxisLogScale(): EmbeddedScatterChartBuilder = js.native
   def setXAxisRange(start: Double, end: Double): EmbeddedScatterChartBuilder = js.native
-  def setXAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedScatterChartBuilder = js.native
+  def setXAxisTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = js.native
   def setXAxisTitle(title: String): EmbeddedScatterChartBuilder = js.native
-  def setXAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedScatterChartBuilder = js.native
+  def setXAxisTitleTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = js.native
   def setYAxisLogScale(): EmbeddedScatterChartBuilder = js.native
   def setYAxisRange(start: Double, end: Double): EmbeddedScatterChartBuilder = js.native
-  def setYAxisTextStyle(textStyle: Charts.TextStyle): EmbeddedScatterChartBuilder = js.native
+  def setYAxisTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = js.native
   def setYAxisTitle(title: String): EmbeddedScatterChartBuilder = js.native
-  def setYAxisTitleTextStyle(textStyle: Charts.TextStyle): EmbeddedScatterChartBuilder = js.native
+  def setYAxisTitleTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder = js.native
 }
 
 @js.native
@@ -949,16 +950,16 @@ trait EmbeddedTableChartBuilder extends js.Object {
   def enablePaging(pageSize: Integer, startPage: Integer): EmbeddedTableChartBuilder = js.native
   def enableRtlTable(rtlEnabled: Boolean): EmbeddedTableChartBuilder = js.native
   def enableSorting(enableSorting: Boolean): EmbeddedTableChartBuilder = js.native
-  def getChartType(): Charts.ChartType = js.native
+  def getChartType(): ChartType = js.native
   def getContainer(): ContainerInfo = js.native
   def getRanges(): js.Array[Range] = js.native
   def removeRange(range: Range): EmbeddedChartBuilder = js.native
-  def setChartType(`type`: Charts.ChartType): EmbeddedChartBuilder = js.native
+  def setChartType(`type`: ChartType): EmbeddedChartBuilder = js.native
   def setFirstRowNumber(number: Integer): EmbeddedTableChartBuilder = js.native
-  def setHiddenDimensionStrategy(strategy: Charts.ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
+  def setHiddenDimensionStrategy(strategy: ChartHiddenDimensionStrategy): EmbeddedChartBuilder = js.native
   def setInitialSortingAscending(column: Integer): EmbeddedTableChartBuilder = js.native
   def setInitialSortingDescending(column: Integer): EmbeddedTableChartBuilder = js.native
-  def setMergeStrategy(mergeStrategy: Charts.ChartMergeStrategy): EmbeddedChartBuilder = js.native
+  def setMergeStrategy(mergeStrategy: ChartMergeStrategy): EmbeddedChartBuilder = js.native
   def setNumHeaders(headers: Integer): EmbeddedChartBuilder = js.native
   def setOption(option: String, value: js.Any): EmbeddedChartBuilder = js.native
   def setPosition(anchorRowPos: Integer, anchorColPos: Integer, offsetX: Integer, offsetY: Integer): EmbeddedChartBuilder = js.native
@@ -1242,7 +1243,7 @@ trait Protection extends js.Object {
   def removeEditor(emailAddress: String): Protection = js.native
   def removeEditor(user: User): Protection = js.native
   def removeEditors(emailAddresses: js.Array[String]): Protection = js.native
-  def removeEditors(users: js.Array[User]): Protection = js.native
+//  def removeEditors(users: js.Array[User]): Protection = js.native
   def setDescription(description: String): Protection = js.native
   def setDomainEdit(editable: Boolean): Protection = js.native
   def setNamedRange(namedRange: NamedRange): Protection = js.native
@@ -1314,8 +1315,8 @@ trait Range extends js.Object {
   def getDataRegion(dimension: Dimension): Range = js.native
   def getDataSourceTables(): js.Array[DataSourceTable] = js.native
   def getDataSourceUrl(): String = js.native
-  def getDataTable(): Charts.DataTable = js.native
-  def getDataTable(firstRowIsHeader: Boolean): Charts.DataTable = js.native
+  def getDataTable(): DataTable = js.native
+  def getDataTable(firstRowIsHeader: Boolean): DataTable = js.native
   def getDataValidation(): DataValidation | Null = js.native
   def getDataValidations(): js.Array[js.Array[DataValidation | Null]] = js.native
   def getDeveloperMetadata(): js.Array[DeveloperMetadata] = js.native
@@ -1860,7 +1861,7 @@ trait Spreadsheet extends js.Object {
   def setSpreadsheetLocale(locale: String): Unit = js.native
   def setSpreadsheetTheme(theme: SpreadsheetTheme): SpreadsheetTheme = js.native
   def setSpreadsheetTimeZone(timezone: String): Unit = js.native
-  def show(userInterface: HTML.HtmlOutput): Unit = js.native
+  def show(userInterface: HtmlOutput): Unit = js.native
   def sort(columnPosition: Integer): Sheet = js.native
   def sort(columnPosition: Integer, ascending: Boolean): Sheet = js.native
   def toast(msg: String): Unit = js.native
@@ -1878,33 +1879,33 @@ trait Spreadsheet extends js.Object {
 
 @js.native
 trait SpreadsheetApp extends js.Object {
-  var AutoFillSeries: AutoFillSeries.type = js.native
-  var BandingTheme: BandingTheme.type = js.native
-  var BooleanCriteria: BooleanCriteria.type = js.native
-  var BorderStyle: BorderStyle.type = js.native
-  var ColorType: ColorType.type = js.native
-  var CopyPasteType: CopyPasteType.type = js.native
-  var DataExecutionErrorCode: DataExecutionErrorCode.type = js.native
-  var DataExecutionState: DataExecutionState.type = js.native
-  var DataSourceParameterType: DataSourceParameterType.type = js.native
-  var DataSourceType: DataSourceType.type = js.native
-  var DataValidationCriteria: DataValidationCriteria.type = js.native
-  var DeveloperMetadataLocationType: DeveloperMetadataLocationType.type = js.native
-  var DeveloperMetadataVisibility: DeveloperMetadataVisibility.type = js.native
-  var Dimension: Dimension.type = js.native
-  var Direction: Direction.type = js.native
-  var GroupControlTogglePosition: GroupControlTogglePosition.type = js.native
-  var InterpolationType: InterpolationType.type = js.native
-  var PivotTableSummarizeFunction: PivotTableSummarizeFunction.type = js.native
-  var PivotValueDisplayType: PivotValueDisplayType.type = js.native
-  var ProtectionType: ProtectionType.type = js.native
-  var RecalculationInterval: RecalculationInterval.type = js.native
-  var RelativeDate: RelativeDate.type = js.native
-  var SheetType: SheetType.type = js.native
-  var TextDirection: TextDirection.type = js.native
-  var TextToColumnsDelimiter: TextToColumnsDelimiter.type = js.native
-  var ThemeColorType: ThemeColorType.type = js.native
-  var WrapStrategy: WrapStrategy.type = js.native
+  var AutoFillSeries: AutoFillSeries = js.native
+  var BandingTheme: BandingTheme = js.native
+  var BooleanCriteria: BooleanCriteria = js.native
+  var BorderStyle: BorderStyle = js.native
+  var ColorType: ColorType = js.native
+  var CopyPasteType: CopyPasteType = js.native
+  var DataExecutionErrorCode: DataExecutionErrorCode = js.native
+  var DataExecutionState: DataExecutionState = js.native
+  var DataSourceParameterType: DataSourceParameterType = js.native
+  var DataSourceType: DataSourceType = js.native
+  var DataValidationCriteria: DataValidationCriteria = js.native
+  var DeveloperMetadataLocationType: DeveloperMetadataLocationType = js.native
+  var DeveloperMetadataVisibility: DeveloperMetadataVisibility = js.native
+  var Dimension: Dimension = js.native
+  var Direction: Direction = js.native
+  var GroupControlTogglePosition: GroupControlTogglePosition = js.native
+  var InterpolationType: InterpolationType = js.native
+  var PivotTableSummarizeFunction: PivotTableSummarizeFunction = js.native
+  var PivotValueDisplayType: PivotValueDisplayType = js.native
+  var ProtectionType: ProtectionType = js.native
+  var RecalculationInterval: RecalculationInterval = js.native
+  var RelativeDate: RelativeDate = js.native
+  var SheetType: SheetType = js.native
+  var TextDirection: TextDirection = js.native
+  var TextToColumnsDelimiter: TextToColumnsDelimiter = js.native
+  var ThemeColorType: ThemeColorType = js.native
+  var WrapStrategy: WrapStrategy = js.native
   def create(name: String): Spreadsheet = js.native
   def create(name: String, rows: Integer, columns: Integer): Spreadsheet = js.native
   def enableAllDataSourcesExecution(): Unit = js.native
@@ -1925,7 +1926,7 @@ trait SpreadsheetApp extends js.Object {
   def newFilterCriteria(): FilterCriteriaBuilder = js.native
   def newRichTextValue(): RichTextValueBuilder = js.native
   def newTextStyle(): TextStyleBuilder = js.native
-  def open(file: Drive.File): Spreadsheet = js.native
+  def open(file: File): Spreadsheet = js.native
   def openById(id: String): Spreadsheet = js.native
   def openByUrl(url: String): Spreadsheet = js.native
   def setActiveRange(range: Range): Range = js.native
@@ -2067,16 +2068,4 @@ object Spreadsheet extends js.Object {
   type FontLine = String
   type FontStyle = String
   type FontWeight = String
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var SpreadsheetApp: GoogleAppsScript.Spreadsheet.SpreadsheetApp = js.native
-}
-
 }

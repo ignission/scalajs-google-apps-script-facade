@@ -1,13 +1,9 @@
+package facade.googleappsscript.gmail
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Gmail {
+import scala.scalajs.js.annotation._
 
 @js.native
 trait GmailApp extends js.Object {
@@ -236,16 +232,4 @@ trait GmailThread extends js.Object {
 @JSGlobal("GoogleAppsScript.Gmail")
 object Gmail extends js.Object {
   type GmailDraftOptions = GmailAdvancedOptions
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var GmailApp: GoogleAppsScript.Gmail.GmailApp = js.native
-}
-
 }

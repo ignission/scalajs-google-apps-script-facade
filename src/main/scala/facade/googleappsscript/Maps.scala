@@ -1,17 +1,10 @@
+package facade.googleappsscript.maps
+
+import facade.googleappsscript.base.{Blob, Date}
+import tech.ignission.jsgas.maps.Avoid
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Maps {
-
-@js.native
-sealed trait Avoid extends js.Object {
-}
+import scala.scalajs.js.annotation._
 
 @js.native
 @JSGlobal("GoogleAppsScript.Maps.Avoid")
@@ -65,8 +58,8 @@ trait DirectionFinder extends js.Object {
 
 @js.native
 trait DirectionFinderEnums extends js.Object {
-  var Avoid: Avoid.type = js.native
-  var Mode: Mode.type = js.native
+  var Avoid: Avoid = js.native
+  var Mode: Mode = js.native
 }
 
 @js.native
@@ -181,10 +174,10 @@ trait StaticMap extends js.Object {
 
 @js.native
 trait StaticMapEnums extends js.Object {
-  var Color: Color.type = js.native
-  var Format: Format.type = js.native
-  var MarkerSize: MarkerSize.type = js.native
-  var Type: Type.type = js.native
+  var Color: Color = js.native
+  var Format: Format = js.native
+  var MarkerSize: MarkerSize = js.native
+  var Type: Type = js.native
 }
 
 @js.native
@@ -200,16 +193,4 @@ object Type extends js.Object {
   var HYBRID: Type = js.native
   @JSBracketAccess
   def apply(value: Type): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var Maps: GoogleAppsScript.Maps.Maps = js.native
-}
-
 }

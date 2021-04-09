@@ -1,13 +1,9 @@
+package facade.googleappsscript.html
+
+import facade.googleappsscript.base.{Blob, BlobSource}
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package HTML {
+import scala.scalajs.js.annotation._
 
 @js.native
 trait HtmlOutput extends js.Object {
@@ -41,8 +37,8 @@ trait HtmlOutputMetaTag extends js.Object {
 
 @js.native
 trait HtmlService extends js.Object {
-  var SandboxMode: SandboxMode.type = js.native
-  var XFrameOptionsMode: XFrameOptionsMode.type = js.native
+  var SandboxMode: SandboxMode = js.native
+  var XFrameOptionsMode: XFrameOptionsMode = js.native
   def createHtmlOutput(): HtmlOutput = js.native
   def createHtmlOutput(blob: BlobSource): HtmlOutput = js.native
   def createHtmlOutput(html: String): HtmlOutput = js.native
@@ -90,16 +86,4 @@ object XFrameOptionsMode extends js.Object {
   var DEFAULT: XFrameOptionsMode = js.native
   @JSBracketAccess
   def apply(value: XFrameOptionsMode): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var HtmlService: GoogleAppsScript.HTML.HtmlService = js.native
-}
-
 }

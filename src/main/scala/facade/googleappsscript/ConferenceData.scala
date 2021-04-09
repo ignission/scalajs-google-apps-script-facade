@@ -1,13 +1,7 @@
+package facade.googleappsscript.conference_data
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Conference_Data {
+import scala.scalajs.js.annotation._
 
 @js.native
 trait ConferenceData extends js.Object {
@@ -27,9 +21,9 @@ trait ConferenceDataBuilder extends js.Object {
 
 @js.native
 trait ConferenceDataService extends js.Object {
-  var ConferenceErrorType: ConferenceErrorType.type = js.native
-  var EntryPointFeature: EntryPointFeature.type = js.native
-  var EntryPointType: EntryPointType.type = js.native
+  var ConferenceErrorType: ConferenceErrorType = js.native
+  var EntryPointFeature: EntryPointFeature = js.native
+  var EntryPointType: EntryPointType = js.native
   def newConferenceDataBuilder(): ConferenceDataBuilder = js.native
   def newConferenceError(): ConferenceError = js.native
   def newConferenceParameter(): ConferenceParameter = js.native
@@ -105,16 +99,4 @@ object EntryPointType extends js.Object {
   var SIP: EntryPointType = js.native
   @JSBracketAccess
   def apply(value: EntryPointType): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var ConferenceDataService: GoogleAppsScript.Conference_Data.ConferenceDataService = js.native
-}
-
 }

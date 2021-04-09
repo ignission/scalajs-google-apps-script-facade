@@ -1,13 +1,15 @@
+package facade.googleappsscript.charts
+
+import facade.googleappsscript.base.Blob
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
 
-package GoogleAppsScript {
-
-package Charts {
+@js.native
+@JSGlobalScope
+object Facade extends js.Object {
+}
 
 @js.native
 trait AreaChartBuilder extends js.Object {
@@ -138,13 +140,13 @@ object ChartType extends js.Object {
 
 @js.native
 trait Charts extends js.Object {
-  var ChartHiddenDimensionStrategy: ChartHiddenDimensionStrategy.type = js.native
-  var ChartMergeStrategy: ChartMergeStrategy.type = js.native
-  var ChartType: ChartType.type = js.native
-  var ColumnType: ColumnType.type = js.native
-  var CurveStyle: CurveStyle.type = js.native
-  var PointStyle: PointStyle.type = js.native
-  var Position: Position.type = js.native
+  var ChartHiddenDimensionStrategy: ChartHiddenDimensionStrategy = js.native
+  var ChartMergeStrategy: ChartMergeStrategy = js.native
+  var ChartType: ChartType = js.native
+  var ColumnType: ColumnType = js.native
+  var CurveStyle: CurveStyle = js.native
+  var PointStyle: PointStyle = js.native
+  var Position: Position = js.native
   def newAreaChart(): AreaChartBuilder = js.native
   def newBarChart(): BarChartBuilder = js.native
   def newColumnChart(): ColumnChartBuilder = js.native
@@ -436,16 +438,4 @@ trait TextStyleBuilder extends js.Object {
   def setColor(cssValue: String): TextStyleBuilder = js.native
   def setFontName(fontName: String): TextStyleBuilder = js.native
   def setFontSize(fontSize: Double): TextStyleBuilder = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var Charts: GoogleAppsScript.Charts.Charts = js.native
-}
-
 }

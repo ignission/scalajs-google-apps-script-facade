@@ -1,13 +1,9 @@
+package facade.googleappsscript.optimization
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
+import scala.scalajs.js.annotation._
 
-package facade {
 
-package GoogleAppsScript {
-
-package Optimization {
 
 @js.native
 trait LinearOptimizationConstraint extends js.Object {
@@ -31,8 +27,8 @@ trait LinearOptimizationEngine extends js.Object {
 
 @js.native
 trait LinearOptimizationService extends js.Object {
-  var Status: Status.type = js.native
-  var VariableType: VariableType.type = js.native
+  var Status: Status = js.native
+  var VariableType: VariableType = js.native
   def createEngine(): LinearOptimizationEngine = js.native
 }
 
@@ -73,16 +69,4 @@ object VariableType extends js.Object {
   var CONTINUOUS: VariableType = js.native
   @JSBracketAccess
   def apply(value: VariableType): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var LinearOptimizationService: GoogleAppsScript.Optimization.LinearOptimizationService = js.native
-}
-
 }

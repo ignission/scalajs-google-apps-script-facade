@@ -1,13 +1,9 @@
+package facade.googleappsscript.document
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Document {
+import scala.scalajs.js.annotation._
 
 @js.native
 sealed trait Attribute extends js.Object {
@@ -73,13 +69,13 @@ trait Body extends Element {
   def appendTable(cells: js.Array[js.Array[String]]): Table = js.native
   def appendTable(table: Table): Table = js.native
   def clear(): Body = js.native
-  def copy(): Body = js.native
+  override def copy(): Body = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getHeadingAttributes(paragraphHeading: ParagraphHeading): js.Dynamic = js.native
@@ -93,11 +89,11 @@ trait Body extends Element {
   def getPageHeight(): Double = js.native
   def getPageWidth(): Double = js.native
   def getParagraphs(): js.Array[Paragraph] = js.native
-  def getParent(): ContainerElement = js.native
+  override def getParent(): ContainerElement = js.native
   def getTables(): js.Array[Table] = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertHorizontalRule(childIndex: Integer): HorizontalRule = js.native
   def insertImage(childIndex: Integer, image: BlobSource): InlineImage = js.native
   def insertImage(childIndex: Integer, image: InlineImage): InlineImage = js.native
@@ -112,7 +108,7 @@ trait Body extends Element {
   def insertTable(childIndex: Integer, table: Table): Table = js.native
   def removeChild(child: Element): Body = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): Body = js.native
+  override def setAttributes(attributes: js.Any): Body = js.native
   def setHeadingAttributes(paragraphHeading: ParagraphHeading, attributes: js.Any): Body = js.native
   def setMarginBottom(marginBottom: Double): Body = js.native
   def setMarginLeft(marginLeft: Double): Body = js.native
@@ -124,9 +120,9 @@ trait Body extends Element {
   def setTextAlignment(textAlignment: TextAlignment): Body = js.native
   def getFootnotes(): js.Array[Footnote] = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
-  def getPreviousSibling(): Element = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def getNextSibling(): Element = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def setLinkUrl(url: String): Body = js.native
 }
 
@@ -139,40 +135,40 @@ trait Bookmark extends js.Object {
 
 @js.native
 trait ContainerElement extends Element {
-  def asBody(): Body = js.native
-  def asEquation(): Equation = js.native
-  def asFooterSection(): FooterSection = js.native
-  def asFootnoteSection(): FootnoteSection = js.native
-  def asHeaderSection(): HeaderSection = js.native
-  def asListItem(): ListItem = js.native
-  def asParagraph(): Paragraph = js.native
-  def asTable(): Table = js.native
-  def asTableCell(): TableCell = js.native
-  def asTableOfContents(): TableOfContents = js.native
-  def asTableRow(): TableRow = js.native
+  override def asBody(): Body = js.native
+  override def asEquation(): Equation = js.native
+  override def asFooterSection(): FooterSection = js.native
+  override def asFootnoteSection(): FootnoteSection = js.native
+  override def asHeaderSection(): HeaderSection = js.native
+  override def asListItem(): ListItem = js.native
+  override def asParagraph(): Paragraph = js.native
+  override def asTable(): Table = js.native
+  override def asTableCell(): TableCell = js.native
+  override def asTableOfContents(): TableOfContents = js.native
+  override def asTableRow(): TableRow = js.native
   def clear(): ContainerElement = js.native
-  def copy(): ContainerElement = js.native
+  override def copy(): ContainerElement = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): ContainerElement = js.native
-  def removeFromParent(): ContainerElement = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): ContainerElement = js.native
+  override def removeFromParent(): ContainerElement = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): ContainerElement = js.native
+  override def setAttributes(attributes: js.Any): ContainerElement = js.native
   def setLinkUrl(url: String): ContainerElement = js.native
   def setTextAlignment(textAlignment: TextAlignment): ContainerElement = js.native
 }
@@ -224,20 +220,20 @@ trait Document extends js.Object {
 
 @js.native
 trait DocumentApp extends js.Object {
-  var Attribute: Attribute.type = js.native
-  var ElementType: ElementType.type = js.native
-  var GlyphType: GlyphType.type = js.native
-  var HorizontalAlignment: HorizontalAlignment.type = js.native
-  var ParagraphHeading: ParagraphHeading.type = js.native
-  var PositionedLayout: PositionedLayout.type = js.native
-  var TextAlignment: TextAlignment.type = js.native
-  var VerticalAlignment: VerticalAlignment.type = js.native
+  var Attribute: Attribute = js.native
+  var ElementType: ElementType = js.native
+  var GlyphType: GlyphType = js.native
+  var HorizontalAlignment: HorizontalAlignment = js.native
+  var ParagraphHeading: ParagraphHeading = js.native
+  var PositionedLayout: PositionedLayout = js.native
+  var TextAlignment: TextAlignment = js.native
+  var VerticalAlignment: VerticalAlignment = js.native
   def create(name: String): Document = js.native
   def getActiveDocument(): Document = js.native
   def getUi(): Ui = js.native
   def openById(id: String): Document = js.native
   def openByUrl(url: String): Document = js.native
-  var FontFamily: FontFamily.type = js.native
+  var FontFamily: FontFamily = js.native
 }
 
 @js.native
@@ -311,28 +307,28 @@ object ElementType extends js.Object {
 @js.native
 trait Equation extends Element {
   def clear(): Equation = js.native
-  def copy(): Equation = js.native
+  override def copy(): Equation = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): Equation = js.native
-  def removeFromParent(): Equation = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): Equation = js.native
+  override def removeFromParent(): Equation = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): Equation = js.native
+  override def setAttributes(attributes: js.Any): Equation = js.native
   def setLinkUrl(url: String): Equation = js.native
   def setTextAlignment(textAlignment: TextAlignment): Equation = js.native
 }
@@ -340,60 +336,60 @@ trait Equation extends Element {
 @js.native
 trait EquationFunction extends Element {
   def clear(): EquationFunction = js.native
-  def copy(): EquationFunction = js.native
+  override def copy(): EquationFunction = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getCode(): String = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): EquationFunction = js.native
-  def removeFromParent(): EquationFunction = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): EquationFunction = js.native
+  override def removeFromParent(): EquationFunction = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): EquationFunction = js.native
+  override def setAttributes(attributes: js.Any): EquationFunction = js.native
   def setLinkUrl(url: String): EquationFunction = js.native
   def setTextAlignment(textAlignment: TextAlignment): EquationFunction = js.native
 }
 
 @js.native
 trait EquationFunctionArgumentSeparator extends Element {
-  def copy(): EquationFunctionArgumentSeparator = js.native
-  def getAttributes(): js.Dynamic = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): EquationFunctionArgumentSeparator = js.native
-  def removeFromParent(): EquationFunctionArgumentSeparator = js.native
-  def setAttributes(attributes: js.Any): EquationFunctionArgumentSeparator = js.native
+  override def copy(): EquationFunctionArgumentSeparator = js.native
+  override def getAttributes(): js.Dynamic = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): EquationFunctionArgumentSeparator = js.native
+  override def removeFromParent(): EquationFunctionArgumentSeparator = js.native
+  override def setAttributes(attributes: js.Any): EquationFunctionArgumentSeparator = js.native
 }
 
 @js.native
 trait EquationSymbol extends Element {
-  def copy(): EquationSymbol = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def copy(): EquationSymbol = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getCode(): String = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): EquationSymbol = js.native
-  def removeFromParent(): EquationSymbol = js.native
-  def setAttributes(attributes: js.Any): EquationSymbol = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): EquationSymbol = js.native
+  override def removeFromParent(): EquationSymbol = js.native
+  override def setAttributes(attributes: js.Any): EquationSymbol = js.native
 }
 
 @js.native
@@ -452,24 +448,24 @@ trait FooterSection extends Element {
   def appendTable(cells: js.Array[js.Array[String]]): Table = js.native
   def appendTable(table: Table): Table = js.native
   def clear(): FooterSection = js.native
-  def copy(): FooterSection = js.native
+  override def copy(): FooterSection = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getImages(): js.Array[InlineImage] = js.native
   def getListItems(): js.Array[ListItem] = js.native
   def getNumChildren(): Integer = js.native
   def getParagraphs(): js.Array[Paragraph] = js.native
-  def getParent(): ContainerElement = js.native
+  override def getParent(): ContainerElement = js.native
   def getTables(): js.Array[Table] = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertHorizontalRule(childIndex: Integer): HorizontalRule = js.native
   def insertImage(childIndex: Integer, image: BlobSource): InlineImage = js.native
   def insertImage(childIndex: Integer, image: InlineImage): InlineImage = js.native
@@ -481,31 +477,31 @@ trait FooterSection extends Element {
   def insertTable(childIndex: Integer, cells: js.Array[js.Array[String]]): Table = js.native
   def insertTable(childIndex: Integer, table: Table): Table = js.native
   def removeChild(child: Element): FooterSection = js.native
-  def removeFromParent(): FooterSection = js.native
+  override def removeFromParent(): FooterSection = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): FooterSection = js.native
+  override def setAttributes(attributes: js.Any): FooterSection = js.native
   def setText(text: String): FooterSection = js.native
   def setTextAlignment(textAlignment: TextAlignment): FooterSection = js.native
   def getFootnotes(): js.Array[Footnote] = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
-  def getPreviousSibling(): Element = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def getNextSibling(): Element = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def setLinkUrl(url: String): FooterSection = js.native
 }
 
 @js.native
 trait Footnote extends Element {
-  def copy(): Footnote = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override  def copy(): Footnote = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getFootnoteContents(): FootnoteSection = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def removeFromParent(): Footnote = js.native
-  def setAttributes(attributes: js.Any): Footnote = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def removeFromParent(): Footnote = js.native
+  override def setAttributes(attributes: js.Any): Footnote = js.native
 }
 
 @js.native
@@ -513,34 +509,34 @@ trait FootnoteSection extends Element {
   def appendParagraph(paragraph: Paragraph): Paragraph = js.native
   def appendParagraph(text: String): Paragraph = js.native
   def clear(): FootnoteSection = js.native
-  def copy(): FootnoteSection = js.native
+  override def copy(): FootnoteSection = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
   def getParagraphs(): js.Array[Paragraph] = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertParagraph(childIndex: Integer, paragraph: Paragraph): Paragraph = js.native
   def insertParagraph(childIndex: Integer, text: String): Paragraph = js.native
   def removeChild(child: Element): FootnoteSection = js.native
-  def removeFromParent(): FootnoteSection = js.native
+  override def removeFromParent(): FootnoteSection = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): FootnoteSection = js.native
+  override def setAttributes(attributes: js.Any): FootnoteSection = js.native
   def setText(text: String): FootnoteSection = js.native
   def setTextAlignment(textAlignment: TextAlignment): FootnoteSection = js.native
   def getFootnotes(): js.Array[Footnote] = js.native
   def getLinkUrl(): String = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def setLinkUrl(url: String): FootnoteSection = js.native
 }
 
@@ -576,24 +572,24 @@ trait HeaderSection extends Element {
   def appendTable(cells: js.Array[js.Array[String]]): Table = js.native
   def appendTable(table: Table): Table = js.native
   def clear(): HeaderSection = js.native
-  def copy(): HeaderSection = js.native
+  override def copy(): HeaderSection = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getImages(): js.Array[InlineImage] = js.native
   def getListItems(): js.Array[ListItem] = js.native
   def getNumChildren(): Integer = js.native
   def getParagraphs(): js.Array[Paragraph] = js.native
-  def getParent(): ContainerElement = js.native
+  override def getParent(): ContainerElement = js.native
   def getTables(): js.Array[Table] = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertHorizontalRule(childIndex: Integer): HorizontalRule = js.native
   def insertImage(childIndex: Integer, image: BlobSource): InlineImage = js.native
   def insertImage(childIndex: Integer, image: InlineImage): InlineImage = js.native
@@ -605,16 +601,16 @@ trait HeaderSection extends Element {
   def insertTable(childIndex: Integer, cells: js.Array[js.Array[String]]): Table = js.native
   def insertTable(childIndex: Integer, table: Table): Table = js.native
   def removeChild(child: Element): HeaderSection = js.native
-  def removeFromParent(): HeaderSection = js.native
+  override def removeFromParent(): HeaderSection = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): HeaderSection = js.native
+  override def setAttributes(attributes: js.Any): HeaderSection = js.native
   def setText(text: String): HeaderSection = js.native
   def setTextAlignment(textAlignment: TextAlignment): HeaderSection = js.native
   def getFootnotes(): js.Array[Footnote] = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
-  def getPreviousSibling(): Element = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def getNextSibling(): Element = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def setLinkUrl(url: String): HeaderSection = js.native
 }
 
@@ -635,56 +631,56 @@ object HorizontalAlignment extends js.Object {
 
 @js.native
 trait HorizontalRule extends Element {
-  def copy(): HorizontalRule = js.native
-  def getAttributes(): js.Dynamic = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def removeFromParent(): HorizontalRule = js.native
-  def setAttributes(attributes: js.Any): HorizontalRule = js.native
+  override def copy(): HorizontalRule = js.native
+  override def getAttributes(): js.Dynamic = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def removeFromParent(): HorizontalRule = js.native
+  override def setAttributes(attributes: js.Any): HorizontalRule = js.native
 }
 
 @js.native
 trait InlineDrawing extends Element {
-  def copy(): InlineDrawing = js.native
+  override def copy(): InlineDrawing = js.native
   def getAltDescription(): String = js.native
   def getAltTitle(): String = js.native
-  def getAttributes(): js.Dynamic = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): InlineDrawing = js.native
-  def removeFromParent(): InlineDrawing = js.native
+  override def getAttributes(): js.Dynamic = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): InlineDrawing = js.native
+  override def removeFromParent(): InlineDrawing = js.native
   def setAltDescription(description: String): InlineDrawing = js.native
   def setAltTitle(title: String): InlineDrawing = js.native
-  def setAttributes(attributes: js.Any): InlineDrawing = js.native
+  override def setAttributes(attributes: js.Any): InlineDrawing = js.native
 }
 
 @js.native
 trait InlineImage extends Element {
-  def copy(): InlineImage = js.native
+  override  def copy(): InlineImage = js.native
   def getAltDescription(): String = js.native
   def getAltTitle(): String = js.native
   def getAs(contentType: String): Blob = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getBlob(): Blob = js.native
   def getHeight(): Integer = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
   def getWidth(): Integer = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): InlineImage = js.native
-  def removeFromParent(): InlineImage = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): InlineImage = js.native
+  override def removeFromParent(): InlineImage = js.native
   def setAltDescription(description: String): InlineImage = js.native
   def setAltTitle(title: String): InlineImage = js.native
-  def setAttributes(attributes: js.Any): InlineImage = js.native
+  override def setAttributes(attributes: js.Any): InlineImage = js.native
   def setHeight(height: Integer): InlineImage = js.native
   def setLinkUrl(url: String): InlineImage = js.native
   def setWidth(width: Integer): InlineImage = js.native
@@ -701,14 +697,14 @@ trait ListItem extends Element {
   def appendText(text: String): Text = js.native
   def appendText(text: Text): Text = js.native
   def clear(): ListItem = js.native
-  def copy(): ListItem = js.native
+  override def copy(): ListItem = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
   def getAlignment(): HorizontalAlignment = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getGlyphType(): GlyphType = js.native
@@ -720,17 +716,17 @@ trait ListItem extends Element {
   def getLinkUrl(): String = js.native
   def getListId(): String = js.native
   def getNestingLevel(): Integer = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
+  override def getParent(): ContainerElement = js.native
   def getPositionedImage(id: String): PositionedImage = js.native
   def getPositionedImages(): js.Array[PositionedImage] = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getPreviousSibling(): Element = js.native
   def getSpacingAfter(): Double = js.native
   def getSpacingBefore(): Double = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertHorizontalRule(childIndex: Integer): HorizontalRule = js.native
   def insertInlineImage(childIndex: Integer, image: BlobSource): InlineImage = js.native
   def insertInlineImage(childIndex: Integer, image: InlineImage): InlineImage = js.native
@@ -738,15 +734,15 @@ trait ListItem extends Element {
   def insertPageBreak(childIndex: Integer, pageBreak: PageBreak): PageBreak = js.native
   def insertText(childIndex: Integer, text: String): Text = js.native
   def insertText(childIndex: Integer, text: Text): Text = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def isLeftToRight(): Boolean = js.native
-  def merge(): ListItem = js.native
+  override def merge(): ListItem = js.native
   def removeChild(child: Element): ListItem = js.native
-  def removeFromParent(): ListItem = js.native
+  override def removeFromParent(): ListItem = js.native
   def removePositionedImage(id: String): Boolean = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
   def setAlignment(alignment: HorizontalAlignment): ListItem = js.native
-  def setAttributes(attributes: js.Any): ListItem = js.native
+  override def setAttributes(attributes: js.Any): ListItem = js.native
   def setGlyphType(glyphType: GlyphType): ListItem = js.native
   def setHeading(heading: ParagraphHeading): ListItem = js.native
   def setIndentEnd(indentEnd: Double): ListItem = js.native
@@ -773,15 +769,15 @@ trait NamedRange extends js.Object {
 
 @js.native
 trait PageBreak extends Element {
-  def copy(): PageBreak = js.native
-  def getAttributes(): js.Dynamic = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def removeFromParent(): PageBreak = js.native
-  def setAttributes(attributes: js.Any): PageBreak = js.native
+  override def copy(): PageBreak = js.native
+  override def getAttributes(): js.Dynamic = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def removeFromParent(): PageBreak = js.native
+  override def setAttributes(attributes: js.Any): PageBreak = js.native
 }
 
 @js.native
@@ -795,14 +791,14 @@ trait Paragraph extends Element {
   def appendText(text: String): Text = js.native
   def appendText(text: Text): Text = js.native
   def clear(): Paragraph = js.native
-  def copy(): Paragraph = js.native
+  override def copy(): Paragraph = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
   def getAlignment(): HorizontalAlignment = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getHeading(): ParagraphHeading = js.native
@@ -811,17 +807,17 @@ trait Paragraph extends Element {
   def getIndentStart(): Double = js.native
   def getLineSpacing(): Double = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
+  override def getParent(): ContainerElement = js.native
   def getPositionedImage(id: String): PositionedImage = js.native
   def getPositionedImages(): js.Array[PositionedImage] = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getPreviousSibling(): Element = js.native
   def getSpacingAfter(): Double = js.native
   def getSpacingBefore(): Double = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertHorizontalRule(childIndex: Integer): HorizontalRule = js.native
   def insertInlineImage(childIndex: Integer, image: BlobSource): InlineImage = js.native
   def insertInlineImage(childIndex: Integer, image: InlineImage): InlineImage = js.native
@@ -829,15 +825,15 @@ trait Paragraph extends Element {
   def insertPageBreak(childIndex: Integer, pageBreak: PageBreak): PageBreak = js.native
   def insertText(childIndex: Integer, text: String): Text = js.native
   def insertText(childIndex: Integer, text: Text): Text = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def isLeftToRight(): Boolean = js.native
-  def merge(): Paragraph = js.native
+  override def merge(): Paragraph = js.native
   def removeChild(child: Element): Paragraph = js.native
-  def removeFromParent(): Paragraph = js.native
+  override def removeFromParent(): Paragraph = js.native
   def removePositionedImage(id: String): Boolean = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
   def setAlignment(alignment: HorizontalAlignment): Paragraph = js.native
-  def setAttributes(attributes: js.Any): Paragraph = js.native
+  override def setAttributes(attributes: js.Any): Paragraph = js.native
   def setHeading(heading: ParagraphHeading): Paragraph = js.native
   def setIndentEnd(indentEnd: Double): Paragraph = js.native
   def setIndentFirstLine(indentFirstLine: Double): Paragraph = js.native
@@ -947,13 +943,13 @@ trait Table extends Element {
   def appendTableRow(): TableRow = js.native
   def appendTableRow(tableRow: TableRow): TableRow = js.native
   def clear(): Table = js.native
-  def copy(): Table = js.native
+  override  def copy(): Table = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override def getAttributes(): js.Dynamic = js.native
   def getBorderColor(): String = js.native
   def getBorderWidth(): Double = js.native
   def getCell(rowIndex: Integer, cellIndex: Integer): TableCell = js.native
@@ -961,23 +957,23 @@ trait Table extends Element {
   def getChildIndex(child: Element): Integer = js.native
   def getColumnWidth(columnIndex: Integer): Double = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
   def getNumRows(): Integer = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
   def getRow(rowIndex: Integer): TableRow = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override def getType(): ElementType = js.native
   def insertTableRow(childIndex: Integer): TableRow = js.native
   def insertTableRow(childIndex: Integer, tableRow: TableRow): TableRow = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
   def removeChild(child: Element): Table = js.native
-  def removeFromParent(): Table = js.native
+  override def removeFromParent(): Table = js.native
   def removeRow(rowIndex: Integer): TableRow = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): Table = js.native
+  override def setAttributes(attributes: js.Any): Table = js.native
   def setBorderColor(color: String): Table = js.native
   def setBorderWidth(width: Double): Table = js.native
   def setColumnWidth(columnIndex: Integer, width: Double): Table = js.native
@@ -998,32 +994,32 @@ trait TableCell extends Element {
   def appendTable(cells: js.Array[js.Array[String]]): Table = js.native
   def appendTable(table: Table): Table = js.native
   def clear(): TableCell = js.native
-  def copy(): TableCell = js.native
+  override def copy(): TableCell = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override  def getAttributes(): js.Dynamic = js.native
   def getBackgroundColor(): String = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getColSpan(): Integer = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
   def getPaddingBottom(): Double = js.native
   def getPaddingLeft(): Double = js.native
   def getPaddingRight(): Double = js.native
   def getPaddingTop(): Double = js.native
-  def getParent(): ContainerElement = js.native
+  override  def getParent(): ContainerElement = js.native
   def getParentRow(): TableRow = js.native
   def getParentTable(): Table = js.native
-  def getPreviousSibling(): Element = js.native
+  override  def getPreviousSibling(): Element = js.native
   def getRowSpan(): Integer = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override  def getType(): ElementType = js.native
   def getVerticalAlignment(): VerticalAlignment = js.native
   def getWidth(): Double = js.native
   def insertHorizontalRule(childIndex: Integer): HorizontalRule = js.native
@@ -1036,12 +1032,12 @@ trait TableCell extends Element {
   def insertTable(childIndex: Integer): Table = js.native
   def insertTable(childIndex: Integer, cells: js.Array[js.Array[String]]): Table = js.native
   def insertTable(childIndex: Integer, table: Table): Table = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): TableCell = js.native
+  override  def isAtDocumentEnd(): Boolean = js.native
+  override  def merge(): TableCell = js.native
   def removeChild(child: Element): TableCell = js.native
-  def removeFromParent(): TableCell = js.native
+  override  def removeFromParent(): TableCell = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): TableCell = js.native
+  override  def setAttributes(attributes: js.Any): TableCell = js.native
   def setBackgroundColor(color: String): TableCell = js.native
   def setLinkUrl(url: String): TableCell = js.native
   def setPaddingBottom(paddingBottom: Double): TableCell = js.native
@@ -1057,27 +1053,27 @@ trait TableCell extends Element {
 @js.native
 trait TableOfContents extends Element {
   def clear(): TableOfContents = js.native
-  def copy(): TableOfContents = js.native
+  override  def copy(): TableOfContents = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override  def getAttributes(): js.Dynamic = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getLinkUrl(): String = js.native
-  def getNextSibling(): Element = js.native
+  override  def getNextSibling(): Element = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override  def getParent(): ContainerElement = js.native
+  override  def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def removeFromParent(): TableOfContents = js.native
+  override  def getType(): ElementType = js.native
+  override  def isAtDocumentEnd(): Boolean = js.native
+  override  def removeFromParent(): TableOfContents = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): TableOfContents = js.native
+  override  def setAttributes(attributes: js.Any): TableOfContents = js.native
   def setLinkUrl(url: String): TableOfContents = js.native
   def setTextAlignment(textAlignment: TextAlignment): TableOfContents = js.native
 }
@@ -1088,37 +1084,37 @@ trait TableRow extends Element {
   def appendTableCell(textContents: String): TableCell = js.native
   def appendTableCell(tableCell: TableCell): TableCell = js.native
   def clear(): TableRow = js.native
-  def copy(): TableRow = js.native
+  override def copy(): TableRow = js.native
   def editAsText(): Text = js.native
   def findElement(elementType: ElementType): RangeElement = js.native
   def findElement(elementType: ElementType, from: RangeElement): RangeElement = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override   def getAttributes(): js.Dynamic = js.native
   def getCell(cellIndex: Integer): TableCell = js.native
   def getChild(childIndex: Integer): Element = js.native
   def getChildIndex(child: Element): Integer = js.native
   def getLinkUrl(): String = js.native
   def getMinimumHeight(): Double = js.native
-  def getNextSibling(): Element = js.native
+  override  def getNextSibling(): Element = js.native
   def getNumCells(): Integer = js.native
   def getNumChildren(): Integer = js.native
-  def getParent(): ContainerElement = js.native
+  override def getParent(): ContainerElement = js.native
   def getParentTable(): Table = js.native
-  def getPreviousSibling(): Element = js.native
+  override  def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
-  def getType(): ElementType = js.native
+  override  def getType(): ElementType = js.native
   def insertTableCell(childIndex: Integer): TableCell = js.native
   def insertTableCell(childIndex: Integer, textContents: String): TableCell = js.native
   def insertTableCell(childIndex: Integer, tableCell: TableCell): TableCell = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): TableRow = js.native
+  override  def isAtDocumentEnd(): Boolean = js.native
+  override  def merge(): TableRow = js.native
   def removeCell(cellIndex: Integer): TableCell = js.native
   def removeChild(child: Element): TableRow = js.native
-  def removeFromParent(): TableRow = js.native
+  override   def removeFromParent(): TableRow = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
-  def setAttributes(attributes: js.Any): TableRow = js.native
+  override   def setAttributes(attributes: js.Any): TableRow = js.native
   def setLinkUrl(url: String): TableRow = js.native
   def setMinimumHeight(minHeight: Double): TableRow = js.native
   def setTextAlignment(textAlignment: TextAlignment): TableRow = js.native
@@ -1127,12 +1123,12 @@ trait TableRow extends Element {
 @js.native
 trait Text extends Element {
   def appendText(text: String): Text = js.native
-  def copy(): Text = js.native
+  override  def copy(): Text = js.native
   def deleteText(startOffset: Integer, endOffsetInclusive: Integer): Text = js.native
   def editAsText(): Text = js.native
   def findText(searchPattern: String): RangeElement = js.native
   def findText(searchPattern: String, from: RangeElement): RangeElement = js.native
-  def getAttributes(): js.Dynamic = js.native
+  override  def getAttributes(): js.Dynamic = js.native
   def getAttributes(offset: Integer): js.Dynamic = js.native
   def getBackgroundColor(): String = js.native
   def getBackgroundColor(offset: Integer): String = js.native
@@ -1144,16 +1140,16 @@ trait Text extends Element {
   def getForegroundColor(offset: Integer): String = js.native
   def getLinkUrl(): String = js.native
   def getLinkUrl(offset: Integer): String = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
+  override  def getNextSibling(): Element = js.native
+  override  def getParent(): ContainerElement = js.native
+  override  def getPreviousSibling(): Element = js.native
   def getText(): String = js.native
   def getTextAlignment(): TextAlignment = js.native
   def getTextAlignment(offset: Integer): TextAlignment = js.native
   def getTextAttributeIndices(): js.Array[Integer] = js.native
-  def getType(): ElementType = js.native
+  override   def getType(): ElementType = js.native
   def insertText(offset: Integer, text: String): Text = js.native
-  def isAtDocumentEnd(): Boolean = js.native
+  override  def isAtDocumentEnd(): Boolean = js.native
   def isBold(): Boolean = js.native
   def isBold(offset: Integer): Boolean = js.native
   def isItalic(): Boolean = js.native
@@ -1162,11 +1158,11 @@ trait Text extends Element {
   def isStrikethrough(offset: Integer): Boolean = js.native
   def isUnderline(): Boolean = js.native
   def isUnderline(offset: Integer): Boolean = js.native
-  def merge(): Text = js.native
-  def removeFromParent(): Text = js.native
+  override def merge(): Text = js.native
+  override def removeFromParent(): Text = js.native
   def replaceText(searchPattern: String, replacement: String): Element = js.native
   def setAttributes(startOffset: Integer, endOffsetInclusive: Integer, attributes: js.Any): Text = js.native
-  def setAttributes(attributes: js.Any): Text = js.native
+  override def setAttributes(attributes: js.Any): Text = js.native
   def setBackgroundColor(startOffset: Integer, endOffsetInclusive: Integer, color: String): Text = js.native
   def setBackgroundColor(color: String): Text = js.native
   def setBold(bold: Boolean): Text = js.native
@@ -1206,16 +1202,16 @@ object TextAlignment extends js.Object {
 
 @js.native
 trait UnsupportedElement extends Element {
-  def copy(): UnsupportedElement = js.native
-  def getAttributes(): js.Dynamic = js.native
-  def getNextSibling(): Element = js.native
-  def getParent(): ContainerElement = js.native
-  def getPreviousSibling(): Element = js.native
-  def getType(): ElementType = js.native
-  def isAtDocumentEnd(): Boolean = js.native
-  def merge(): UnsupportedElement = js.native
-  def removeFromParent(): UnsupportedElement = js.native
-  def setAttributes(attributes: js.Any): UnsupportedElement = js.native
+  override def copy(): UnsupportedElement = js.native
+  override def getAttributes(): js.Dynamic = js.native
+  override def getNextSibling(): Element = js.native
+  override def getParent(): ContainerElement = js.native
+  override def getPreviousSibling(): Element = js.native
+  override def getType(): ElementType = js.native
+  override def isAtDocumentEnd(): Boolean = js.native
+  override def merge(): UnsupportedElement = js.native
+  override def removeFromParent(): UnsupportedElement = js.native
+  override def setAttributes(attributes: js.Any): UnsupportedElement = js.native
 }
 
 @js.native
@@ -1230,16 +1226,4 @@ object VerticalAlignment extends js.Object {
   var TOP: VerticalAlignment = js.native
   @JSBracketAccess
   def apply(value: VerticalAlignment): String = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var DocumentApp: GoogleAppsScript.Document.DocumentApp = js.native
-}
-
 }

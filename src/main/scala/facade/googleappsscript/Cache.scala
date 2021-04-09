@@ -1,17 +1,7 @@
-
-import facade.GoogleAppsScript
+package facade.googleappsscript.cache
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation._
 import scala.scalajs.js.|
-
-package facade.googleappsscript
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var CacheService: GoogleAppsScript.Cache.CacheService = js.native
-}
 
 @js.native
 trait Cache extends js.Object {

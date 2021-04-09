@@ -1,13 +1,10 @@
+package facade.googleappsscript.forms
+
+import facade.googleappsscript.base._
 
 import scala.scalajs.js
-import js.annotation._
-import js.|
-
-package facade {
-
-package GoogleAppsScript {
-
-package Forms {
+import scala.scalajs.js.annotation._
+import scala.scalajs.js.|
 
 @js.native
 sealed trait Alignment extends js.Object {
@@ -271,11 +268,11 @@ trait Form extends js.Object {
 
 @js.native
 trait FormApp extends js.Object {
-  var Alignment: Alignment.type = js.native
-  var DestinationType: DestinationType.type = js.native
-  var FeedbackType: FeedbackType.type = js.native
-  var ItemType: ItemType.type = js.native
-  var PageNavigationType: PageNavigationType.type = js.native
+  var Alignment: Alignment = js.native
+  var DestinationType: DestinationType = js.native
+  var FeedbackType: FeedbackType = js.native
+  var ItemType: ItemType = js.native
+  var PageNavigationType: PageNavigationType = js.native
   def create(title: String): Form = js.native
   def createCheckboxGridValidation(): CheckboxGridValidationBuilder = js.native
   def createCheckboxValidation(): CheckboxValidationBuilder = js.native
@@ -675,16 +672,4 @@ trait VideoItem extends js.Object {
   def setTitle(title: String): VideoItem = js.native
   def setVideoUrl(youtubeUrl: String): VideoItem = js.native
   def setWidth(width: Integer): VideoItem = js.native
-}
-
-}
-
-}
-
-@js.native
-@JSGlobalScope
-object Facade extends js.Object {
-  var FormApp: GoogleAppsScript.Forms.FormApp = js.native
-}
-
 }
