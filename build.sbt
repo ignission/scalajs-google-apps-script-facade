@@ -22,7 +22,7 @@ lazy val noPublishSettings = Seq(
   publish := {},
   publishLocal := {},
   publishArtifact := false,
-  skip in publish := true
+  skip / publish := true
 )
 
 lazy val publishPackages = Seq(
@@ -85,7 +85,7 @@ lazy val example = project
   )
   .dependsOn(root)
 
-addCommandAlias("fix", "all compile:scalafix; test:scalafix")
+addCommandAlias("fix", "all example/compile:scalafix; example/test:scalafix")
 addCommandAlias("fixCheck", "; compile:scalafix --check; test:scalafix --check")
 addCommandAlias("format", "; scalafmt; test:scalafmt; scalafmtSbt")
 addCommandAlias("formatCheck", "; scalafmtCheck; test:scalafmtCheck; scalafmtSbtCheck")

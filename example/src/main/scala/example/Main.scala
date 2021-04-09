@@ -5,9 +5,9 @@ import facade.googleappsscript.GoogleAppsScript
 import facade.googleappsscript.html.HtmlOutput
 import facade.googleappsscript.url_fetch.URLFetchRequestOptions
 
-import scalajs.js.annotation._
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic
+import scala.scalajs.js.annotation._
 
 object Main {
 
