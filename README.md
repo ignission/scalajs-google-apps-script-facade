@@ -11,11 +11,20 @@ Add the following to your sbt build definition:
     libraryDependencies += "tech.ignission" %%% "google-apps-script-scalajs-facade" % "0.3.0"
 
 ## Example
+### Requirements
+- Node.js
 
 If you want to upload a generated js via command line, may install [clasp](https://github.com/google/clasp/) as following:
 
+### Step1: Set up
     npm install -g @google/clasp
+    clasp login
+    clasp create --type sheets --rootDir ./dist
 
-    sbt example/fastOptJS
+### Step2: Push sources
+    
+    sbt // in sbt console
+    project example
+    push
 
 Thanks for awesome project [sjrd/scala-js-ts-importer](https://github.com/sjrd/scala-js-ts-importer) and [exoego/scala-js-ts-importer](https://github.com/exoego/scala-js-ts-importer)
