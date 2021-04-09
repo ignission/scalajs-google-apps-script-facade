@@ -1,11 +1,11 @@
 package example
 
-import tech.ignission.jsgas.GoogleAppsScript
+
+import facade.googleappsscript.GoogleAppsScript
+import facade.googleappsscript.html.HtmlOutput
+import facade.googleappsscript.url_fetch.URLFetchRequestOptions
 
 import scalajs.js.annotation._
-import tech.ignission.jsgas.html.HtmlOutput
-import tech.ignission.jsgas.urlfetch.URLFetchRequestOptions
-
 import scala.scalajs.js
 import scala.scalajs.js.Dynamic
 
