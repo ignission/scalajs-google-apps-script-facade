@@ -11,18 +11,21 @@ Add the following to your sbt build definition:
     libraryDependencies += "tech.ignission" %%% "google-apps-script-scalajs-facade" % "0.4.0"
 
 ## Example
+
 ### Requirements
+
 - Node.js
 
 If you want to upload a generated js via command line, may install [clasp](https://github.com/google/clasp/) as following:
 
-### Step1: Set up
+### Step-1: Set up
+
     npm install -g @google/clasp
     clasp login
     clasp create --type sheets --rootDir ./dist
 
-### Step2: Push sources
-    
+### Step-2: Push sources
+
     sbt // in sbt console
     project example
     push
