@@ -108,9 +108,7 @@ trait Menu extends js.Object {
 sealed trait MimeType extends js.Object {}
 
 @js.native
-@JSGlobal(
-  "GoogleAppsScript.facade.googleappsscript.base.Base.facade.googleappsscript.base.MimeType"
-)
+@JSGlobal("MimeType")
 object MimeType extends js.Object {
   var GOOGLE_APPS_SCRIPT: MimeType          = js.native
   var GOOGLE_DRAWINGS: MimeType             = js.native
