@@ -27,17 +27,17 @@ lazy val noPublishSettings = Seq(
 
 lazy val publishPackages = Seq(
   isSnapshot := version.value endsWith "SNAPSHOT",
-  publishTo in ThisBuild := sonatypePublishToBundle.value,
+  ThisBuild / publishTo := sonatypePublishToBundle.value,
   publishMavenStyle := true,
-  publishArtifact in Test := false,
-  publishArtifact in (Compile, packageDoc) := true,
-  publishArtifact in (Compile, packageSrc) := true,
+  Test / publishArtifact := false,
+  Compile / packageDoc / publishArtifact := true,
+  Compile / packageSrc / publishArtifact := true,
   pomIncludeRepository := { _ => false },
   sonatypeTimeoutMillis := 3 * 60 * 60 * 1000,
   publishConfiguration := publishConfiguration.value.withOverwrite(true),
   publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
   homepage := Some(url("https://github.com/ignission")),
-  sources in (Compile, doc) := Seq.empty,
+  Compile / doc / sources := Seq.empty,
   licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT")),
   scmInfo := Some(
     ScmInfo(
