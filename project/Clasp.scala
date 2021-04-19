@@ -11,6 +11,11 @@ class Logger {
     println(out.toList.mkString("\n"))
     println(err.toList.mkString("\n"))
   }
+
+  def flush(): Unit = {
+    out.clear()
+    err.clear()
+  }
 }
 
 object Clasp {
@@ -35,9 +40,16 @@ object Clasp {
   def deploy(cwd: String): Unit = {
     val logger = new Logger
     Process("clasp deployments", new File(cwd)) ! logger.log
-    val deploymentRow = logger.out(2)
+
+    val deploymentRow = logger.out(logger.out.length - 1)
     val deployId      = deploymentRow.split(' ')(1)
-    Process(s"clasp deploy -i $deployId") ! logger.log
+
+    logger.print()
+    logger.flush()
+
+    val deployCmd = s"clasp deploy -i $deployId"
+    println(deployCmd + "\n")
+    Process(deployCmd, new File(cwd)) ! logger.log
     logger.print()
   }
 }
