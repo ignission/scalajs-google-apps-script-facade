@@ -39,17 +39,25 @@ object Clasp {
 
   def deploy(cwd: String): Unit = {
     val logger = new Logger
-    Process("clasp deployments", new File(cwd)) ! logger.log
+    val dir    = new File(cwd)
+
+    Process("clasp deployments", dir) ! logger.log
+    logger.print()
+
+    if (logger.out.length <= 2) {
+      logger.flush()
+      Process("clasp deploy", dir) ! logger.log
+      logger.print()
+    }
 
     val deploymentRow = logger.out(logger.out.length - 1)
     val deployId      = deploymentRow.split(' ')(1)
 
-    logger.print()
     logger.flush()
 
     val deployCmd = s"clasp deploy -i $deployId"
     println(deployCmd + "\n")
-    Process(deployCmd, new File(cwd)) ! logger.log
+    Process(deployCmd, dir) ! logger.log
     logger.print()
   }
 }
