@@ -61,6 +61,9 @@ lazy val root = project
   .settings(commonSettings)
   .settings(publishPackages)
 
+val push   = taskKey[Unit]("Push sources")
+val deploy = taskKey[Unit]("Deploy")
+
 lazy val example = project
   .in(file("example"))
   .enablePlugins(ScalaJSPlugin)
@@ -82,6 +85,17 @@ lazy val example = project
     addCompilerPlugin(scalafixSemanticdb),
     semanticdbEnabled := true,
     semanticdbVersion := scalafixSemanticdb.revision
+  )
+  .settings(
+    push := {
+      (Compile / fastOptJS).value
+      Clasp.dist(name.value, scalaBinaryVersion.value, "example")
+      Clasp.push("example")
+    },
+    deploy := {
+      push.value
+      Clasp.deploy("example")
+    }
   )
   .dependsOn(root)
 

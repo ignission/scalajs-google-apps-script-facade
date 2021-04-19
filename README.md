@@ -22,7 +22,8 @@ If you want to upload a generated js via command line, may install [clasp](https
 
     npm install -g @google/clasp
     clasp login
-    clasp create --type sheets --rootDir ./dist
+    cd example
+    clasp create --type webapp --rootDir ./dist
 
 ### Step-2: Push sources
 
