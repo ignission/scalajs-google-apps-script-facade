@@ -108,3 +108,5 @@ addCommandAlias("format", "; scalafmt; test:scalafmt; scalafmtSbt")
 addCommandAlias("formatCheck", "; scalafmtCheck; test:scalafmtCheck; scalafmtSbtCheck")
 addCommandAlias("fixAll", "fix; format")
 addCommandAlias("checkAll", "fixCheck; formatCheck")
+
+Global / onChangedBuildSource := ReloadOnSourceChanges
