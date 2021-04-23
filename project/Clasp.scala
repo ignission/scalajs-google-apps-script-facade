@@ -56,7 +56,6 @@ object Clasp {
     logger.flush()
 
     val deployCmd = s"clasp deploy -i $deployId"
-    println(deployCmd + "\n")
     Process(
       Seq("clasp", "deploy", "-i", deployId, "-d", "deployed from sbt"),
       dir
