@@ -45,11 +45,12 @@ object Main {
 
   @JSExportTopLevel("doPost")
   def doPost(e: DoPost): TextOutput = {
-    val data    = JSON.parse(e.postData.contents).asInstanceOf[PostData]
-    val sheet   = getOrCreateSheet(data.topic, data.post.account)
-    val message = data.post.message
+    val data           = JSON.parse(e.postData.contents).asInstanceOf[PostData]
+    val sheet          = getOrCreateSheet(data.topic, data.post.account)
+    val message        = data.post.message
+    val removedMessage = removeBotName(message)
 
-    addContent(sheet, message)
+    addContent(sheet, removedMessage)
 
     val contents = listContents(sheet)
     val reply = new TypetalkReply {
