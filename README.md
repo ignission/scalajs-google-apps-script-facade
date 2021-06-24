@@ -8,7 +8,7 @@ This facade is converted from [@types/google-apps-script@1.0.31](https://www.npm
 
 Add the following to your sbt build definition:
 
-    libraryDependencies += "tech.ignission" %%% "google-apps-script-scalajs-facade" % "0.5.0"
+    libraryDependencies += "tech.ignission" %%% "google-apps-script-scalajs-facade" % "0.5.1"
 
 ## Example
 
