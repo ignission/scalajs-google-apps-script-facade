@@ -5,7 +5,7 @@ normalizedName := "google-apps-script-scalajs-facade"
 ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.5.0"
 
 lazy val commonSettings = Seq(
-  version := "0.6.1",
+  version := "0.6.2",
   scalaVersion := "3.0.1",
   crossScalaVersions := Seq("2.13.6", "2.12.11"),
   organization := "tech.ignission",
