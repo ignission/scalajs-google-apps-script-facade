@@ -5,10 +5,10 @@ normalizedName := "google-apps-script-scalajs-facade"
 ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.5.0"
 
 lazy val commonSettings = Seq(
-  version := "0.6.3",
-  scalaVersion := "3.0.1",
+  version            := "0.6.3",
+  scalaVersion       := "3.0.1",
   crossScalaVersions := Seq("3.0.1", "2.13.6", "2.12.11"),
-  organization := "tech.ignission",
+  organization       := "tech.ignission",
   scalacOptions ++= List(
     "-deprecation",
     "-feature",
@@ -17,25 +17,25 @@ lazy val commonSettings = Seq(
 )
 
 lazy val noPublishSettings = Seq(
-  publish := {},
-  publishLocal := {},
+  publish         := {},
+  publishLocal    := {},
   publishArtifact := false,
-  skip / publish := true
+  skip / publish  := true
 )
 
 lazy val publishPackages = Seq(
-  isSnapshot := version.value endsWith "SNAPSHOT",
-  ThisBuild / publishTo := sonatypePublishToBundle.value,
-  publishMavenStyle := true,
-  Test / publishArtifact := false,
+  isSnapshot                             := version.value endsWith "SNAPSHOT",
+  ThisBuild / publishTo                  := sonatypePublishToBundle.value,
+  publishMavenStyle                      := true,
+  Test / publishArtifact                 := false,
   Compile / packageDoc / publishArtifact := true,
   Compile / packageSrc / publishArtifact := true,
-  pomIncludeRepository := { _ => false },
-  sonatypeTimeoutMillis := 3 * 60 * 60 * 1000,
-  publishConfiguration := publishConfiguration.value.withOverwrite(true),
-  publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true),
-  homepage := Some(url("https://github.com/ignission")),
-  Compile / doc / sources := Seq.empty,
+  pomIncludeRepository                   := { _ => false },
+  sonatypeTimeoutMillis                  := 3 * 60 * 60 * 1000,
+  publishConfiguration                   := publishConfiguration.value.withOverwrite(true),
+  publishLocalConfiguration              := publishLocalConfiguration.value.withOverwrite(true),
+  homepage                               := Some(url("https://github.com/ignission")),
+  Compile / doc / sources                := Seq.empty,
   licenses := Seq("MIT" -> url("https://opensource.org/licenses/MIT")),
   scmInfo := Some(
     ScmInfo(
