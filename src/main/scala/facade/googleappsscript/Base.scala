@@ -314,7 +314,7 @@ trait DateConstructor extends js.Object {
       minutes: Double = ???,
       seconds: Double = ???,
       ms: Double = ???
-  ): Double         = js.native
+  ): Double = js.native
   def now(): Double = js.native
 }
 

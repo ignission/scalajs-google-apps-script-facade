@@ -49,7 +49,7 @@ trait BigQueryConfig extends js.Object {
       name: String,
       `type`: BigQueryParameterType,
       value: String
-  ): BigQueryConfig                                                 = js.native
+  ): BigQueryConfig = js.native
   def build(): Config                                               = js.native
   def printJson(): String                                           = js.native
   def setAccessToken(accessToken: String): BigQueryConfig           = js.native

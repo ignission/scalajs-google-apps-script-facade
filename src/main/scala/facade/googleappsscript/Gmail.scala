@@ -13,7 +13,7 @@ trait GmailApp extends js.Object {
       subject: String,
       body: String,
       options: GmailAdvancedOptions
-  ): GmailDraft                                                            = js.native
+  ): GmailDraft = js.native
   def createLabel(name: String): GmailLabel                                = js.native
   def deleteLabel(label: GmailLabel): GmailApp                             = js.native
   def getAliases(): js.Array[String]                                       = js.native
@@ -77,7 +77,7 @@ trait GmailApp extends js.Object {
       subject: String,
       body: String,
       options: GmailAdvancedOptions
-  ): GmailApp                                                    = js.native
+  ): GmailApp = js.native
   def setCurrentMessageAccessToken(accessToken: String): Unit    = js.native
   def starMessage(message: GmailMessage): GmailApp               = js.native
   def starMessages(messages: js.Array[GmailMessage]): GmailApp   = js.native

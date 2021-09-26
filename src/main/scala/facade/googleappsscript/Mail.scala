@@ -41,6 +41,6 @@ trait MailApp extends js.Object {
       subject: String,
       body: String,
       options: MailAdvancedParameters
-  ): Unit                                                                         = js.native
+  ): Unit = js.native
   def sendEmail(to: String, replyTo: String, subject: String, body: String): Unit = js.native
 }
