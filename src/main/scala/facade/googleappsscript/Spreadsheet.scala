@@ -90,7 +90,7 @@ trait BigQueryDataSourceSpecBuilder extends js.Object {
   def setParameterFromCell(
       parameterName: String,
       sourceCell: String
-  ): BigQueryDataSourceSpecBuilder                                   = js.native
+  ): BigQueryDataSourceSpecBuilder = js.native
   def setProjectId(projectId: String): BigQueryDataSourceSpecBuilder = js.native
   def setRawQuery(rawQuery: String): BigQueryDataSourceSpecBuilder   = js.native
 }
@@ -200,13 +200,13 @@ trait ConditionalFormatRuleBuilder extends js.Object {
       color: String,
       `type`: InterpolationType,
       value: String
-  ): ConditionalFormatRuleBuilder                                      = js.native
+  ): ConditionalFormatRuleBuilder = js.native
   def setGradientMinpoint(color: String): ConditionalFormatRuleBuilder = js.native
   def setGradientMinpointWithValue(
       color: String,
       `type`: InterpolationType,
       value: String
-  ): ConditionalFormatRuleBuilder                                                    = js.native
+  ): ConditionalFormatRuleBuilder = js.native
   def setItalic(italic: Boolean | Null): ConditionalFormatRuleBuilder                = js.native
   def setRanges(ranges: js.Array[Range]): ConditionalFormatRuleBuilder               = js.native
   def setStrikethrough(strikethrough: Boolean | Null): ConditionalFormatRuleBuilder  = js.native
@@ -595,7 +595,7 @@ trait EmbeddedAreaChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                    = js.native
+  ): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedAreaChartBuilder         = js.native
   def setStacked(): EmbeddedAreaChartBuilder                                 = js.native
   def setTitle(chartTitle: String): EmbeddedAreaChartBuilder                 = js.native
@@ -645,7 +645,7 @@ trait EmbeddedBarChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                   = js.native
+  ): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedBarChartBuilder         = js.native
   def setStacked(): EmbeddedBarChartBuilder                                 = js.native
   def setTitle(chartTitle: String): EmbeddedBarChartBuilder                 = js.native
@@ -704,7 +704,7 @@ trait EmbeddedChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                  = js.native
+  ): EmbeddedChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
 }
 
@@ -742,7 +742,7 @@ trait EmbeddedColumnChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                      = js.native
+  ): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedColumnChartBuilder         = js.native
   def setStacked(): EmbeddedColumnChartBuilder                                 = js.native
   def setTitle(chartTitle: String): EmbeddedColumnChartBuilder                 = js.native
@@ -791,7 +791,7 @@ trait EmbeddedComboChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                     = js.native
+  ): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedComboChartBuilder         = js.native
   def setStacked(): EmbeddedComboChartBuilder                                 = js.native
   def setTitle(chartTitle: String): EmbeddedComboChartBuilder                 = js.native
@@ -840,7 +840,7 @@ trait EmbeddedHistogramChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                         = js.native
+  ): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedHistogramChartBuilder         = js.native
   def setStacked(): EmbeddedHistogramChartBuilder                                 = js.native
   def setTitle(chartTitle: String): EmbeddedHistogramChartBuilder                 = js.native
@@ -891,7 +891,7 @@ trait EmbeddedLineChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                    = js.native
+  ): EmbeddedChartBuilder = js.native
   def setRange(start: Double, end: Double): EmbeddedLineChartBuilder         = js.native
   def setTitle(chartTitle: String): EmbeddedLineChartBuilder                 = js.native
   def setTitleTextStyle(textStyle: TextStyle): EmbeddedLineChartBuilder      = js.native
@@ -940,7 +940,7 @@ trait EmbeddedPieChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                  = js.native
+  ): EmbeddedChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedPieChartBuilder                = js.native
   def setTitleTextStyle(textStyle: TextStyle): EmbeddedPieChartBuilder     = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder = js.native
@@ -980,7 +980,7 @@ trait EmbeddedScatterChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                       = js.native
+  ): EmbeddedChartBuilder = js.native
   def setTitle(chartTitle: String): EmbeddedScatterChartBuilder                 = js.native
   def setTitleTextStyle(textStyle: TextStyle): EmbeddedScatterChartBuilder      = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder      = js.native
@@ -1033,7 +1033,7 @@ trait EmbeddedTableChartBuilder extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): EmbeddedChartBuilder                                                    = js.native
+  ): EmbeddedChartBuilder = js.native
   def setTransposeRowsAndColumns(transpose: Boolean): EmbeddedChartBuilder   = js.native
   def showRowNumberColumn(showRowNumber: Boolean): EmbeddedTableChartBuilder = js.native
   def useAlternatingRowStyle(alternate: Boolean): EmbeddedTableChartBuilder  = js.native
@@ -1048,7 +1048,7 @@ trait Filter extends js.Object {
   def setColumnFilterCriteria(
       columnPosition: Integer,
       filterCriteria: FilterCriteria | Null
-  ): Filter                                                     = js.native
+  ): Filter = js.native
   def sort(columnPosition: Integer, ascending: Boolean): Filter = js.native
 }
 
@@ -1225,7 +1225,7 @@ trait PivotGroup extends js.Object {
       minValue: Integer,
       maxValue: Integer,
       intervalSize: Integer
-  ): PivotGroup                                                                    = js.native
+  ): PivotGroup = js.native
   def showRepeatedLabels(): PivotGroup                                             = js.native
   def showTotals(showTotals: Boolean): PivotGroup                                  = js.native
   def sortAscending(): PivotGroup                                                  = js.native
@@ -1242,7 +1242,7 @@ trait PivotTable extends js.Object {
   def addPivotValue(
       sourceDataColumn: Integer,
       summarizeFunction: PivotTableSummarizeFunction
-  ): PivotValue                                                     = js.native
+  ): PivotValue = js.native
   def addRowGroup(sourceDataColumn: Integer): PivotGroup            = js.native
   def getAnchorCell(): Range                                        = js.native
   def getColumnGroups(): js.Array[PivotGroup]                       = js.native
@@ -1355,21 +1355,21 @@ trait Range extends js.Object {
       key: String,
       value: String,
       visibility: DeveloperMetadataVisibility
-  ): Range                                                    = js.native
+  ): Range = js.native
   def applyColumnBanding(): Banding                           = js.native
   def applyColumnBanding(bandingTheme: BandingTheme): Banding = js.native
   def applyColumnBanding(
       bandingTheme: BandingTheme,
       showHeader: Boolean,
       showFooter: Boolean
-  ): Banding                                               = js.native
+  ): Banding = js.native
   def applyRowBanding(): Banding                           = js.native
   def applyRowBanding(bandingTheme: BandingTheme): Banding = js.native
   def applyRowBanding(
       bandingTheme: BandingTheme,
       showHeader: Boolean,
       showFooter: Boolean
-  ): Banding                                                     = js.native
+  ): Banding = js.native
   def autoFill(destination: Range, series: AutoFillSeries): Unit = js.native
   def autoFillToNeighbor(series: AutoFillSeries): Unit           = js.native
   def breakApart(): Range                                        = js.native
@@ -1395,7 +1395,7 @@ trait Range extends js.Object {
       columnEnd: Integer,
       row: Integer,
       rowEnd: Integer
-  ): Unit                              = js.native
+  ): Unit = js.native
   def copyTo(destination: Range): Unit = js.native
   def copyTo(destination: Range, copyPasteType: CopyPasteType, transposed: Boolean): Unit =
     js.native
@@ -1413,7 +1413,7 @@ trait Range extends js.Object {
       columnEnd: Integer,
       row: Integer,
       rowEnd: Integer
-  ): Unit                                                                        = js.native
+  ): Unit = js.native
   def createDeveloperMetadataFinder(): DeveloperMetadataFinder                   = js.native
   def createFilter(): Filter                                                     = js.native
   def createPivotTable(sourceData: Range): PivotTable                            = js.native
@@ -1510,7 +1510,7 @@ trait Range extends js.Object {
       columnOffset: Integer,
       numRows: Integer,
       numColumns: Integer
-  ): Range                                                                 = js.native
+  ): Range = js.native
   def protect(): Protection                                                = js.native
   def randomize(): Range                                                   = js.native
   def removeCheckboxes(): Range                                            = js.native
@@ -1536,7 +1536,7 @@ trait Range extends js.Object {
       horizontal: Boolean | Null,
       color: String | Null,
       style: BorderStyle | Null
-  ): Range                                                                           = js.native
+  ): Range = js.native
   def setDataValidation(rule: DataValidation | Null): Range                          = js.native
   def setDataValidations(rules: js.Array[js.Array[DataValidation | Null]]): Range    = js.native
   def setFontColor(color: String | Null): Range                                      = js.native
@@ -1625,7 +1625,7 @@ trait RangeList extends js.Object {
       horizontal: Boolean | Null,
       color: String | Null,
       style: BorderStyle | Null
-  ): RangeList                                                     = js.native
+  ): RangeList = js.native
   def setFontColor(color: String | Null): RangeList                = js.native
   def setFontFamily(fontFamily: String | Null): RangeList          = js.native
   def setFontLine(fontLine: FontLine | Null): RangeList            = js.native
@@ -1697,7 +1697,7 @@ trait RichTextValueBuilder extends js.Object {
       startOffset: Integer,
       endOffset: Integer,
       textStyle: TextStyle | Null
-  ): RichTextValueBuilder                                             = js.native
+  ): RichTextValueBuilder = js.native
   def setTextStyle(textStyle: TextStyle | Null): RichTextValueBuilder = js.native
 }
 
@@ -1720,7 +1720,7 @@ trait Sheet extends js.Object {
       key: String,
       value: String,
       visibility: DeveloperMetadataVisibility
-  ): Sheet                                                                    = js.native
+  ): Sheet = js.native
   def appendRow(rowContents: js.Array[js.Any]): Sheet                         = js.native
   def autoResizeColumn(columnPosition: Integer): Sheet                        = js.native
   def autoResizeColumns(startColumn: Integer, numColumns: Integer): Sheet     = js.native
@@ -1791,7 +1791,7 @@ trait Sheet extends js.Object {
       startColumn: Integer,
       numRows: Integer,
       numColumns: Integer
-  ): js.Array[js.Array[js.Any]]                                                         = js.native
+  ): js.Array[js.Array[js.Any]] = js.native
   def getSlicers(): js.Array[Slicer]                                                    = js.native
   def getTabColor(): String | Null                                                      = js.native
   def getType(): SheetType                                                              = js.native
@@ -1817,7 +1817,7 @@ trait Sheet extends js.Object {
       row: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): OverGridImage                                                           = js.native
+  ): OverGridImage = js.native
   def insertImage(url: String, column: Integer, row: Integer): OverGridImage = js.native
   def insertImage(
       url: String,
@@ -1825,7 +1825,7 @@ trait Sheet extends js.Object {
       row: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): OverGridImage                                                                     = js.native
+  ): OverGridImage = js.native
   def insertRowAfter(afterPosition: Integer): Sheet                                    = js.native
   def insertRowBefore(beforePosition: Integer): Sheet                                  = js.native
   def insertRows(rowIndex: Integer): Unit                                              = js.native
@@ -1839,7 +1839,7 @@ trait Sheet extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): Slicer                                                                             = js.native
+  ): Slicer = js.native
   def isColumnHiddenByUser(columnPosition: Integer): Boolean                            = js.native
   def isRightToLeft(): Boolean                                                          = js.native
   def isRowHiddenByFilter(rowPosition: Integer): Boolean                                = js.native
@@ -1917,7 +1917,7 @@ trait Slicer extends js.Object {
       anchorColPos: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): Slicer                                                                   = js.native
+  ): Slicer = js.native
   def setRange(rangeApi: Range): Slicer                                       = js.native
   def setTitle(title: String): Slicer                                         = js.native
   def setTitleHorizontalAlignment(horizontalAlignment: String | Null): Slicer = js.native
@@ -1934,7 +1934,7 @@ trait Spreadsheet extends js.Object {
       key: String,
       value: String,
       visibility: DeveloperMetadataVisibility
-  ): Spreadsheet                                                     = js.native
+  ): Spreadsheet = js.native
   def addEditor(emailAddress: String): Spreadsheet                   = js.native
   def addEditor(user: User): Spreadsheet                             = js.native
   def addEditors(emailAddresses: js.Array[String]): Spreadsheet      = js.native
@@ -1996,7 +1996,7 @@ trait Spreadsheet extends js.Object {
       startColumn: Integer,
       numRows: Integer,
       numColumns: Integer
-  ): js.Array[js.Array[js.Any]]                                                         = js.native
+  ): js.Array[js.Array[js.Any]] = js.native
   def getSheets(): js.Array[Sheet]                                                      = js.native
   def getSpreadsheetLocale(): String                                                    = js.native
   def getSpreadsheetTheme(): SpreadsheetTheme | Null                                    = js.native
@@ -2016,7 +2016,7 @@ trait Spreadsheet extends js.Object {
       row: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): OverGridImage                                                           = js.native
+  ): OverGridImage = js.native
   def insertImage(url: String, column: Integer, row: Integer): OverGridImage = js.native
   def insertImage(
       url: String,
@@ -2024,7 +2024,7 @@ trait Spreadsheet extends js.Object {
       row: Integer,
       offsetX: Integer,
       offsetY: Integer
-  ): OverGridImage                                                                   = js.native
+  ): OverGridImage = js.native
   def insertRowAfter(afterPosition: Integer): Sheet                                  = js.native
   def insertRowBefore(beforePosition: Integer): Sheet                                = js.native
   def insertRowsAfter(afterPosition: Integer, howMany: Integer): Sheet               = js.native
@@ -2161,7 +2161,7 @@ trait SpreadsheetTheme extends js.Object {
       red: Integer,
       green: Integer,
       blue: Integer
-  ): SpreadsheetTheme                                     = js.native
+  ): SpreadsheetTheme = js.native
   def setFontFamily(fontFamily: String): SpreadsheetTheme = js.native
 }
 

@@ -103,7 +103,7 @@ trait Geocoder extends js.Object {
       swLongitude: Double,
       neLatitude: Double,
       neLongitude: Double
-  ): Geocoder                                 = js.native
+  ): Geocoder = js.native
   def setLanguage(language: String): Geocoder = js.native
   def setRegion(region: String): Geocoder     = js.native
 }

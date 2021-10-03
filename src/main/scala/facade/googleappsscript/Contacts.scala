@@ -147,7 +147,7 @@ trait ContactsApp extends js.Object {
   def getContactsByCustomField(
       query: ExtendedField | String,
       label: ExtendedField
-  ): js.Array[Contact]                                                               = js.native
+  ): js.Array[Contact] = js.native
   def getContactsByDate(month: Month, day: Integer, label: Field): js.Array[Contact] = js.native
   def getContactsByDate(
       month: Month,
@@ -160,7 +160,7 @@ trait ContactsApp extends js.Object {
       day: Integer,
       year: Integer,
       label: String
-  ): js.Array[Contact]                                                                = js.native
+  ): js.Array[Contact] = js.native
   def getContactsByDate(month: Month, day: Integer, label: String): js.Array[Contact] = js.native
   def getContactsByEmailAddress(query: String): js.Array[Contact]                     = js.native
   def getContactsByEmailAddress(query: String, label: Field): js.Array[Contact]       = js.native

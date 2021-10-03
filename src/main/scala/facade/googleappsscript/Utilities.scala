@@ -97,7 +97,7 @@ trait Utilities extends js.Object {
       value: String,
       key: String,
       charset: Charset
-  ): js.Array[Byte]                                                       = js.native
+  ): js.Array[Byte] = js.native
   def computeRsaSha1Signature(value: String, key: String): js.Array[Byte] = js.native
   def computeRsaSha1Signature(value: String, key: String, charset: Charset): js.Array[Byte] =
     js.native
@@ -111,7 +111,7 @@ trait Utilities extends js.Object {
       value: String,
       key: String,
       charset: Charset
-  ): js.Array[Byte]                                                          = js.native
+  ): js.Array[Byte] = js.native
   def formatDate(date: Date, timeZone: String, format: String): String       = js.native
   def formatString(template: String, args: js.Any*): String                  = js.native
   def getUuid(): String                                                      = js.native

@@ -40,13 +40,13 @@ trait LinearOptimizationEngine extends js.Object {
       upperBounds: js.Array[Double],
       types: js.Array[VariableType],
       objectiveCoefficients: js.Array[Double]
-  ): LinearOptimizationEngine                     = js.native
+  ): LinearOptimizationEngine = js.native
   def setMaximization(): LinearOptimizationEngine = js.native
   def setMinimization(): LinearOptimizationEngine = js.native
   def setObjectiveCoefficient(
       variableName: String,
       coefficient: Double
-  ): LinearOptimizationEngine                            = js.native
+  ): LinearOptimizationEngine = js.native
   def solve(): LinearOptimizationSolution                = js.native
   def solve(seconds: Double): LinearOptimizationSolution = js.native
 }
