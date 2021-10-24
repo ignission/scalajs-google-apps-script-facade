@@ -122,7 +122,7 @@ trait ColorScheme extends js.Object {
       red: Integer,
       green: Integer,
       blue: Integer
-  ): ColorScheme                                                              = js.native
+  ): ColorScheme = js.native
   def setConcreteColor(`type`: ThemeColorType, hexColor: String): ColorScheme = js.native
 }
 
@@ -318,7 +318,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                 = js.native
+  ): Image = js.native
   def insertImage(image: Image): Image     = js.native
   def insertImage(imageUrl: String): Image = js.native
   def insertImage(
@@ -327,7 +327,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                         = js.native
+  ): Image = js.native
   def insertLine(line: Line): Line = js.native
   def insertLine(
       lineCategory: LineCategory,
@@ -340,7 +340,7 @@ trait Layout extends js.Object {
       startTop: Double,
       endLeft: Double,
       endTop: Double
-  ): Line                                                      = js.native
+  ): Line = js.native
   def insertPageElement(pageElement: PageElement): PageElement = js.native
   def insertShape(shape: Shape): Shape                         = js.native
   def insertShape(shapeType: ShapeType): Shape                 = js.native
@@ -350,7 +350,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                                       = js.native
+  ): Shape = js.native
   def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
   def insertSheetsChart(
       sourceChart: EmbeddedChart,
@@ -358,7 +358,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): SheetsChart                                                  = js.native
+  ): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart    = js.native
   def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
   def insertSheetsChartAsImage(
@@ -367,7 +367,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                                      = js.native
+  ): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(
       numRows: Integer,
@@ -376,7 +376,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Table                               = js.native
+  ): Table = js.native
   def insertTable(table: Table): Table   = js.native
   def insertTextBox(text: String): Shape = js.native
   def insertTextBox(
@@ -385,7 +385,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                 = js.native
+  ): Shape = js.native
   def insertVideo(videoUrl: String): Video = js.native
   def insertVideo(
       videoUrl: String,
@@ -393,7 +393,7 @@ trait Layout extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Video                                                           = js.native
+  ): Video = js.native
   def insertVideo(video: Video): Video                               = js.native
   def insertWordArt(wordArt: WordArt): WordArt                       = js.native
   def remove(): Unit                                                 = js.native
@@ -630,7 +630,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                 = js.native
+  ): Image = js.native
   def insertImage(image: Image): Image     = js.native
   def insertImage(imageUrl: String): Image = js.native
   def insertImage(
@@ -639,7 +639,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                         = js.native
+  ): Image = js.native
   def insertLine(line: Line): Line = js.native
   def insertLine(
       lineCategory: LineCategory,
@@ -652,7 +652,7 @@ trait Master extends js.Object {
       startTop: Double,
       endLeft: Double,
       endTop: Double
-  ): Line                                                      = js.native
+  ): Line = js.native
   def insertPageElement(pageElement: PageElement): PageElement = js.native
   def insertShape(shape: Shape): Shape                         = js.native
   def insertShape(shapeType: ShapeType): Shape                 = js.native
@@ -662,7 +662,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                                       = js.native
+  ): Shape = js.native
   def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
   def insertSheetsChart(
       sourceChart: EmbeddedChart,
@@ -670,7 +670,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): SheetsChart                                                  = js.native
+  ): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart    = js.native
   def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
   def insertSheetsChartAsImage(
@@ -679,7 +679,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                                      = js.native
+  ): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(
       numRows: Integer,
@@ -688,7 +688,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Table                               = js.native
+  ): Table = js.native
   def insertTable(table: Table): Table   = js.native
   def insertTextBox(text: String): Shape = js.native
   def insertTextBox(
@@ -697,7 +697,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                 = js.native
+  ): Shape = js.native
   def insertVideo(videoUrl: String): Video = js.native
   def insertVideo(
       videoUrl: String,
@@ -705,7 +705,7 @@ trait Master extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Video                                                           = js.native
+  ): Video = js.native
   def insertVideo(video: Video): Video                               = js.native
   def insertWordArt(wordArt: WordArt): WordArt                       = js.native
   def remove(): Unit                                                 = js.native
@@ -789,7 +789,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                 = js.native
+  ): Image = js.native
   def insertImage(image: Image): Image     = js.native
   def insertImage(imageUrl: String): Image = js.native
   def insertImage(
@@ -798,7 +798,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                         = js.native
+  ): Image = js.native
   def insertLine(line: Line): Line = js.native
   def insertLine(
       lineCategory: LineCategory,
@@ -811,7 +811,7 @@ trait Page extends js.Object {
       startTop: Double,
       endLeft: Double,
       endTop: Double
-  ): Line                                                      = js.native
+  ): Line = js.native
   def insertPageElement(pageElement: PageElement): PageElement = js.native
   def insertShape(shape: Shape): Shape                         = js.native
   def insertShape(shapeType: ShapeType): Shape                 = js.native
@@ -821,7 +821,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                                       = js.native
+  ): Shape = js.native
   def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
   def insertSheetsChart(
       sourceChart: EmbeddedChart,
@@ -829,7 +829,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): SheetsChart                                                  = js.native
+  ): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart    = js.native
   def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
   def insertSheetsChartAsImage(
@@ -838,7 +838,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                                      = js.native
+  ): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(
       numRows: Integer,
@@ -847,7 +847,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Table                               = js.native
+  ): Table = js.native
   def insertTable(table: Table): Table   = js.native
   def insertTextBox(text: String): Shape = js.native
   def insertTextBox(
@@ -856,7 +856,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                 = js.native
+  ): Shape = js.native
   def insertVideo(videoUrl: String): Video = js.native
   def insertVideo(
       videoUrl: String,
@@ -864,7 +864,7 @@ trait Page extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Video                                                           = js.native
+  ): Video = js.native
   def insertVideo(video: Video): Video                               = js.native
   def insertWordArt(wordArt: WordArt): WordArt                       = js.native
   def remove(): Unit                                                 = js.native
@@ -1487,7 +1487,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                 = js.native
+  ): Image = js.native
   def insertImage(image: Image): Image     = js.native
   def insertImage(imageUrl: String): Image = js.native
   def insertImage(
@@ -1496,7 +1496,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                         = js.native
+  ): Image = js.native
   def insertLine(line: Line): Line = js.native
   def insertLine(
       lineCategory: LineCategory,
@@ -1509,7 +1509,7 @@ trait Slide extends js.Object {
       startTop: Double,
       endLeft: Double,
       endTop: Double
-  ): Line                                                      = js.native
+  ): Line = js.native
   def insertPageElement(pageElement: PageElement): PageElement = js.native
   def insertShape(shape: Shape): Shape                         = js.native
   def insertShape(shapeType: ShapeType): Shape                 = js.native
@@ -1519,7 +1519,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                                       = js.native
+  ): Shape = js.native
   def insertSheetsChart(sourceChart: EmbeddedChart): SheetsChart = js.native
   def insertSheetsChart(
       sourceChart: EmbeddedChart,
@@ -1527,7 +1527,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): SheetsChart                                                  = js.native
+  ): SheetsChart = js.native
   def insertSheetsChart(sheetsChart: SheetsChart): SheetsChart    = js.native
   def insertSheetsChartAsImage(sourceChart: EmbeddedChart): Image = js.native
   def insertSheetsChartAsImage(
@@ -1536,7 +1536,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Image                                                      = js.native
+  ): Image = js.native
   def insertTable(numRows: Integer, numColumns: Integer): Table = js.native
   def insertTable(
       numRows: Integer,
@@ -1545,7 +1545,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Table                               = js.native
+  ): Table = js.native
   def insertTable(table: Table): Table   = js.native
   def insertTextBox(text: String): Shape = js.native
   def insertTextBox(
@@ -1554,7 +1554,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Shape                                 = js.native
+  ): Shape = js.native
   def insertVideo(videoUrl: String): Video = js.native
   def insertVideo(
       videoUrl: String,
@@ -1562,7 +1562,7 @@ trait Slide extends js.Object {
       top: Double,
       width: Double,
       height: Double
-  ): Video                                                           = js.native
+  ): Video = js.native
   def insertVideo(video: Video): Video                               = js.native
   def insertWordArt(wordArt: WordArt): WordArt                       = js.native
   def move(index: Integer): Unit                                     = js.native
@@ -1807,7 +1807,7 @@ trait TextRange extends js.Object {
       startOffset: Integer,
       textRange: TextRange,
       matchSourceFormatting: Boolean
-  ): TextRange                                                       = js.native
+  ): TextRange = js.native
   def insertText(startOffset: Integer, text: String): TextRange      = js.native
   def isEmpty(): Boolean                                             = js.native
   def replaceAllText(findText: String, replaceText: String): Integer = js.native

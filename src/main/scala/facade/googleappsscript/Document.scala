@@ -927,7 +927,7 @@ trait RangeBuilder extends js.Object {
       startOffset: Integer,
       endTextElementInclusive: Text,
       endOffsetInclusive: Integer
-  ): RangeBuilder                                   = js.native
+  ): RangeBuilder = js.native
   def addRange(range: Range): RangeBuilder          = js.native
   def build(): Range                                = js.native
   def getRangeElements(): js.Array[RangeElement]    = js.native
@@ -1177,7 +1177,7 @@ trait Text extends Element {
       startOffset: Integer,
       endOffsetInclusive: Integer,
       fontFamilyName: String
-  ): Text                                         = js.native
+  ): Text = js.native
   def setFontFamily(fontFamilyName: String): Text = js.native
   def setFontSize(size: Integer): Text            = js.native
   def setFontSize(startOffset: Integer, endOffsetInclusive: Integer, size: Integer): Text =
@@ -1195,13 +1195,13 @@ trait Text extends Element {
       startOffset: Integer,
       endOffsetInclusive: Integer,
       strikethrough: Boolean
-  ): Text                         = js.native
+  ): Text = js.native
   def setText(text: String): Text = js.native
   def setTextAlignment(
       startOffset: Integer,
       endOffsetInclusive: Integer,
       textAlignment: TextAlignment
-  ): Text                                                  = js.native
+  ): Text = js.native
   def setTextAlignment(textAlignment: TextAlignment): Text = js.native
   def setUnderline(underline: Boolean): Text               = js.native
   def setUnderline(startOffset: Integer, endOffsetInclusive: Integer, underline: Boolean): Text =

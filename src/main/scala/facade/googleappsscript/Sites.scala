@@ -98,7 +98,7 @@ trait Page extends js.Object {
       name: String,
       html: String,
       columnNames: js.Array[String]
-  ): Page                                                                       = js.native
+  ): Page = js.native
   def createPageFromTemplate(title: String, name: String, template: Page): Page = js.native
   def createWebPage(title: String, name: String, html: String): Page            = js.native
   def deletePage(): Unit                                                        = js.native
@@ -175,7 +175,7 @@ trait Site extends js.Object {
       name: String,
       html: String,
       columnNames: js.Array[String]
-  ): Page                                                                       = js.native
+  ): Page = js.native
   def createPageFromTemplate(title: String, name: String, template: Page): Page = js.native
   def createWebPage(title: String, name: String, html: String): Page            = js.native
   def getAllDescendants(): js.Array[Page]                                       = js.native
@@ -212,7 +212,7 @@ trait Site extends js.Object {
       columnNames: js.Array[String],
       values: js.Array[String],
       parent: Page
-  ): ListItem                                                                   = js.native
+  ): ListItem = js.native
   def createWebAttachment(title: String, url: String, parent: Page): Attachment = js.native
   def deleteSite(): Unit                                                        = js.native
   def getAnnouncements(): js.Array[Page]                                        = js.native
