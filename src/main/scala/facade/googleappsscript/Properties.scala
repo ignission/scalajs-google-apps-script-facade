@@ -34,7 +34,7 @@ trait ScriptProperties extends js.Object {
   def setProperties(
       properties: js.Dictionary[String],
       deleteAllOthers: Boolean
-  ): ScriptProperties                                           = js.native
+  ): ScriptProperties = js.native
   def setProperty(key: String, value: String): ScriptProperties = js.native
 }
 

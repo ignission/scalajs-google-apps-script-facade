@@ -27,14 +27,14 @@ trait Calendar extends js.Object {
       startDate: Date,
       recurrence: EventRecurrence,
       options: js.Dictionary[js.Any]
-  ): CalendarEventSeries                                                        = js.native
+  ): CalendarEventSeries = js.native
   def createEvent(title: String, startTime: Date, endTime: Date): CalendarEvent = js.native
   def createEvent(
       title: String,
       startTime: Date,
       endTime: Date,
       options: js.Dictionary[js.Any]
-  ): CalendarEvent                                                   = js.native
+  ): CalendarEvent = js.native
   def createEventFromDescription(description: String): CalendarEvent = js.native
   def createEventSeries(
       title: String,
@@ -48,7 +48,7 @@ trait Calendar extends js.Object {
       endTime: Date,
       recurrence: EventRecurrence,
       options: js.Dictionary[js.Any]
-  ): CalendarEventSeries                                                 = js.native
+  ): CalendarEventSeries = js.native
   def deleteCalendar(): Unit                                             = js.native
   def getColor(): String                                                 = js.native
   def getDescription(): String                                           = js.native
@@ -59,7 +59,7 @@ trait Calendar extends js.Object {
       startTime: Date,
       endTime: Date,
       options: js.Dictionary[js.Any]
-  ): js.Array[CalendarEvent]                               = js.native
+  ): js.Array[CalendarEvent] = js.native
   def getEventsForDay(date: Date): js.Array[CalendarEvent] = js.native
   def getEventsForDay(date: Date, options: js.Dictionary[js.Any]): js.Array[CalendarEvent] =
     js.native
@@ -107,7 +107,7 @@ trait CalendarApp extends js.Object {
       startDate: Date,
       recurrence: EventRecurrence,
       options: js.Dictionary[js.Any]
-  ): CalendarEventSeries                                                        = js.native
+  ): CalendarEventSeries = js.native
   def createCalendar(name: String): Calendar                                    = js.native
   def createCalendar(name: String, options: js.Dictionary[js.Any]): Calendar    = js.native
   def createEvent(title: String, startTime: Date, endTime: Date): CalendarEvent = js.native
@@ -116,7 +116,7 @@ trait CalendarApp extends js.Object {
       startTime: Date,
       endTime: Date,
       options: js.Dictionary[js.Any]
-  ): CalendarEvent                                                   = js.native
+  ): CalendarEvent = js.native
   def createEventFromDescription(description: String): CalendarEvent = js.native
   def createEventSeries(
       title: String,
@@ -130,7 +130,7 @@ trait CalendarApp extends js.Object {
       endTime: Date,
       recurrence: EventRecurrence,
       options: js.Dictionary[js.Any]
-  ): CalendarEventSeries                                                 = js.native
+  ): CalendarEventSeries = js.native
   def getAllCalendars(): js.Array[Calendar]                              = js.native
   def getAllOwnedCalendars(): js.Array[Calendar]                         = js.native
   def getCalendarById(id: String): Calendar                              = js.native
@@ -145,7 +145,7 @@ trait CalendarApp extends js.Object {
       startTime: Date,
       endTime: Date,
       options: js.Dictionary[js.Any]
-  ): js.Array[CalendarEvent]                               = js.native
+  ): js.Array[CalendarEvent] = js.native
   def getEventsForDay(date: Date): js.Array[CalendarEvent] = js.native
   def getEventsForDay(date: Date, options: js.Dictionary[js.Any]): js.Array[CalendarEvent] =
     js.native
@@ -275,7 +275,7 @@ trait CalendarEventSeries extends js.Object {
       recurrence: EventRecurrence,
       startTime: Date,
       endTime: Date
-  ): CalendarEventSeries                                         = js.native
+  ): CalendarEventSeries = js.native
   def setTag(key: String, value: String): CalendarEventSeries    = js.native
   def setTitle(title: String): CalendarEventSeries               = js.native
   def setVisibility(visibility: Visibility): CalendarEventSeries = js.native
